@@ -16,12 +16,8 @@ public class Player {
     public ArrayList weapon;
     public ArrayList armor;
 
-    public Player(String name, int maxHp, int currHp, ArrayList weapon, ArrayList armor) {
-        this.name = name;
-        this.maxHp = maxHp;
-        this.currHp = currHp;
-        this.weapon = weapon;
-        this.armor = armor;
+    public Player() {
+        
     }
 
     public String getName() {
