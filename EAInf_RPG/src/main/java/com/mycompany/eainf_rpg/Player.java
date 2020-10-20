@@ -16,14 +16,18 @@ public class Player {
     public Weapon weapon;
     public Armor armor;
 
-    public Player(String name, int maxHp, int currHp, ArrayList weapon, ArrayList armor) {
-        this.name = name;
-        this.maxHp = maxHp;
-        this.currHp = currHp;
-        this.weapon = weapon;
-        this.armor = armor;
+    public Player() {
+        maxHp = 100;
+        currHp = 100;
     }
 
+    
+    
+    
+    
+    
+    
+    
     public String getName() {
         return name;
     }
