@@ -14,10 +14,10 @@ public class Potion {
     public int healValue;
     public String desc;
 
-    public Potion(String name, int healValue) {
+    public Potion(String name, int healValue, String desc) {
         this.name = name;
         this.healValue = healValue;
-        
+        this.desc = desc;
     }
 
     
