@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package com.mycompany.eainf_rpg;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author benbartel
@@ -72,11 +75,33 @@ public class Player {
     
     
     public void generateWeapon(){
+        ArrayList<String> weaponNames = new ArrayList<> ();
+        weaponNames.add("Iron Sword");
+        weaponNames.add("Bronce Sword");
         
+        int weaponNumber = 1 + (int)(Math.random() * ((weaponNames.size() - 1) + 1));
+        
+        int atk;
+        String desc;
+        
+        switch (weaponNumber) {
+            case 1:
+                atk = 10;
+                desc = "This is a basic Iron Sword!";
+                break;
+            case 2:
+                atk = 8;
+                desc = "This is a basic Bronce Sword!";
+                break;
+            default:
+                break;
+        }
     }
+    
     public void generateArmor(){
         
     }
+    
     public void generatePotion(){
         
     }
