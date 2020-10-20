@@ -17,9 +17,17 @@ public class Player {
     public ArrayList armor;
 
     public Player() {
-        
+        maxHp = 100;
+        currHp = 100;
     }
 
+    
+    
+    
+    
+    
+    
+    
     public String getName() {
         return name;
     }
