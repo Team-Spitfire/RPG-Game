@@ -79,23 +79,29 @@ public class Player {
         weaponNames.add("Iron Sword");
         weaponNames.add("Bronce Sword");
         
-        int weaponNumber = 1 + (int)(Math.random() * ((weaponNames.size() - 1) + 1));
+        int weaponNumber =(int)(Math.random() * (weaponNames.size()));
         
-        int atk;
-        String desc;
+        String weaponName = null;
+        int atk = 0;
+        String desc = null;
         
         switch (weaponNumber) {
-            case 1:
+            case 0:
+                weaponName = weaponNames.get(weaponNumber);
                 atk = 10;
                 desc = "This is a basic Iron Sword!";
                 break;
-            case 2:
+            case 1:
                 atk = 8;
                 desc = "This is a basic Bronce Sword!";
                 break;
             default:
-                break;
+                break; 
         }
+        Weapon neueWeapon = new Weapon(weaponName, atk, desc);
+        //------->Abfrage ob der Spieler den Loot haben will
+        //Neues Fenster für jeden neuen Loot ???
+        //Dann Auswahl ob man es haben will.
     }
     
     public void generateArmor(){
