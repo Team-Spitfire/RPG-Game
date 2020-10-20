@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,7 +28,8 @@ public class HomescreenController implements Initializable {
     }    
 
     @FXML
-    private void btnStart(ActionEvent event) {
+    private void btnStart(ActionEvent event) throws IOException {
+        App.setRoot("Charakters");
     }
 
     @FXML
