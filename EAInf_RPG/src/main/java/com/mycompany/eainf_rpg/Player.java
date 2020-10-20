@@ -21,7 +21,7 @@ public class Player {
         currHp = 100;
         this.name = name;
     }
-
+    //Weapon Hits and Damage Taking
     public void weaponHit () {
         int dmg = weapon.getAtk();
         enemy.getDamage(dmg);
@@ -34,7 +34,7 @@ public class Player {
             dead();
         }
     }
-    
+    //Abfrage ob die Hitpoints unter 0 sind.
     public boolean obGestorben(){
         boolean gestorben;
         if(currHp <= 0){
@@ -45,15 +45,41 @@ public class Player {
         }
         return gestorben;
     }
-    
+    //Methode die ausgeführt wird wenn der Spieler tot ist
+    //Wird beinhalten --> HP auf 100, respawn, item loss?
     public void dead(){
         
     }
     
+    public void loot(){
+        //Auswahl der Drei Item Typen
+        
+        int itemTyp = 1 + (int)(Math.random() * ((3 - 1) + 1));
+        switch (itemTyp) {
+            case 1:
+                generateWeapon();
+                break;
+            case 2:
+                generateArmor();
+                break;
+            case 3:
+                generatePotion();
+                break;
+            default:
+                break;
+        }
+    }
     
     
-    
-    
+    public void generateWeapon(){
+        
+    }
+    public void generateArmor(){
+        
+    }
+    public void generatePotion(){
+        
+    }
     
     
     public void setName(String name) {
