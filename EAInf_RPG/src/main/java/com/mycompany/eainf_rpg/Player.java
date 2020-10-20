@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.mycompany.eainf_rpg;
-import java.util.*;
 /**
  *
  * @author benbartel
@@ -19,6 +18,38 @@ public class Player {
     public Player() {
         maxHp = 100;
         currHp = 100;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMaxHp(int maxHp) {
+        this.maxHp = maxHp;
+    }
+
+    public void setCurrHp(int currHp) {
+        this.currHp = currHp;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public void setArmor(Armor armor) {
+        this.armor = armor;
     }
 
     
