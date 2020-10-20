@@ -73,11 +73,13 @@ public class Player {
         }
     }
     
-    
+    //Generate random Weapon aus Auswahl
+    //Auswahl erweiterbar
     public void generateWeapon(){
         ArrayList<String> weaponNames = new ArrayList<> ();
         weaponNames.add("Iron Sword");
-        weaponNames.add("Bronce Sword");
+        weaponNames.add("Sword of the Fire");
+        weaponNames.add("Sword of the Sun God");
         
         int weaponNumber =(int)(Math.random() * (weaponNames.size()));
         
@@ -93,9 +95,14 @@ public class Player {
                 break;
             case 1:
                 weaponName = weaponNames.get(weaponNumber);
-                atk = 8;
-                desc = "This is a basic Bronce Sword!";
+                atk = 18;
+                desc = "A pretty great Fire Sword?";
                 break;
+            case 2:
+                weaponName = weaponNames.get(weaponNumber);
+                atk = 25;
+                desc = "The Ultimate Sword of the Sun God!";
+                break;    
             default:
                 break; 
         }
@@ -104,13 +111,74 @@ public class Player {
         //Neues Fenster für jeden neuen Loot ???
         //Dann Auswahl ob man es haben will.
     }
-    
+    //Generates random Armor aus Auswahl
+    //Auswahl erweiterbar
     public void generateArmor(){
+        ArrayList<String> armorNames = new ArrayList<> ();
+        armorNames.add("Leather Armor");
+        armorNames.add("Plate Armor");
+        armorNames.add("Armor of the Sun God");
         
+        int weaponNumber =(int)(Math.random() * (armorNames.size()));
+        
+        String armorName = null;
+        int def = 0;
+        String desc = null;
+        
+        switch (weaponNumber) {
+            case 0:
+                armorName = armorNames.get(weaponNumber);
+                def = 20;
+                desc = "Just a basic Plate Armor!";
+                break;
+            case 1:
+                armorName = armorNames.get(weaponNumber);
+                def = 40;
+                desc = "A nice basic Leather Armor!";
+                break;
+            case 2:
+                armorName = armorNames.get(weaponNumber);
+                def = 60;
+                desc = "The Ultimate Armor of the Sun God!";
+                break;    
+            default:
+                break; 
+        }
+        Armor neueArmor = new Armor(armorName, def, desc);
     }
     
     public void generatePotion(){
+        ArrayList<String> potionNames = new ArrayList<> ();
+        potionNames.add("Basic Potion of Healing");
+        potionNames.add("Bigger Potion of Healing");
+        potionNames.add("Huge Potion of Healing");
         
+        int weaponNumber =(int)(Math.random() * (potionNames.size()));
+        
+        String potionName = null;
+        int healValue = 0;
+        String desc = null;
+        
+        switch (weaponNumber) {
+            case 0:
+                potionName = potionNames.get(weaponNumber);
+                healValue = 15;
+                desc = "Restores a small amount of Health!";
+                break;
+            case 1:
+                potionName = potionNames.get(weaponNumber);
+                healValue = 25;
+                desc = "Restores quite a lot of Health!";
+                break;
+            case 2:
+                potionName = potionNames.get(weaponNumber);
+                healValue = 50;
+                desc = "Restores a huge amount of Health!";
+                break;    
+            default:
+                break; 
+        }
+        Armor neueArmor = new Armor(potionName, healValue, desc);
     }
     
     

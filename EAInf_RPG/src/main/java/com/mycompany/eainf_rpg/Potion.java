@@ -12,24 +12,31 @@ package com.mycompany.eainf_rpg;
 public class Potion {
     public String name;
     public int healValue;
-    public int damageValue;
+    public String desc;
 
-    public Potion(String name, int healValue, int damageValue) {
+    public Potion(String name, int healValue) {
         this.name = name;
         this.healValue = healValue;
-        this.damageValue = damageValue;
+        
     }
 
+    
+    
+    
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+    
     public String getName() {
         return name;
     }
 
     public int getHealValue() {
         return healValue;
-    }
-
-    public int getDamageValue() {
-        return damageValue;
     }
 
     public void setName(String name) {
@@ -39,15 +46,6 @@ public class Potion {
     public void setHealValue(int healValue) {
         this.healValue = healValue;
     }
-
-    public void setDamageValue(int damageValue) {
-        this.damageValue = damageValue;
-    }
-    
-    
-    
-    
-    
     
     
     

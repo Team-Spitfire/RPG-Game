@@ -12,10 +12,10 @@ package com.mycompany.eainf_rpg;
 public class Armor {
 
     public String name;
-    public String def;
+    public int def;
     public String desc;
 
-    public Armor(String name, String def, String desc) {
+    public Armor(String name, int def, String desc) {
         this.def = def;
         this.name = name;
         this.desc = desc;
@@ -25,7 +25,7 @@ public class Armor {
         this.name = name;
     }
 
-    public void setDef(String def) {
+    public void setDef(int def) {
         this.def = def;
     }
 
@@ -37,7 +37,7 @@ public class Armor {
         return name;
     }
 
-    public String getDef() {
+    public int getDef() {
         return def;
     }
 
