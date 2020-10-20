@@ -23,4 +23,28 @@ public class Weapon {
         this.desc = desc;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAtk(int atk) {
+        this.atk = atk;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAtk() {
+        return atk;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
 }
