@@ -92,6 +92,7 @@ public class Player {
                 desc = "This is a basic Iron Sword!";
                 break;
             case 1:
+                weaponName = weaponNames.get(weaponNumber);
                 atk = 8;
                 desc = "This is a basic Bronce Sword!";
                 break;
