@@ -13,8 +13,8 @@ public class Player {
     public String name;
     public int maxHp;
     public int currHp;
-    public ArrayList weapon;
-    public ArrayList armor;
+    public Weapon weapon;
+    public Armor armor;
 
     public Player(String name, int maxHp, int currHp, ArrayList weapon, ArrayList armor) {
         this.name = name;
