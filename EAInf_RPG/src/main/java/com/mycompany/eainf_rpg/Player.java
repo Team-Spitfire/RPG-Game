@@ -40,11 +40,11 @@ public class Player {
         return currHp;
     }
 
-    public ArrayList getWeapon() {
+    public Weapon getWeapon() {
         return weapon;
     }
 
-    public ArrayList getArmor() {
+    public Armor getArmor() {
         return armor;
     }
     
