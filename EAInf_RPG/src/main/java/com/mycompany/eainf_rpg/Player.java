@@ -16,14 +16,10 @@ public class Player {
     public ArrayList weapon;
     public ArrayList armor;
     
-        Player () {
-            
-        }
         
         
         
-        
-        
+    
         
         
 }
