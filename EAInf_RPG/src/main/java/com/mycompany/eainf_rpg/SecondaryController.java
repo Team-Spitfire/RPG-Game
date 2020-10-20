@@ -16,7 +16,7 @@ public class SecondaryController {
     }
 
     @FXML
-    private void btnOpenGame(ActionEvent event) {
+    private void btnOpenGame(ActionEvent event) throws IOException {
         App.setRoot("Homescreen");
     }
 }
