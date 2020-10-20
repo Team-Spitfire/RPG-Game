@@ -18,7 +18,8 @@ public class Enemy {
     public Player player;
     
     public Enemy() {
-        
+        maxHp = 100;
+        currHp = 100;
     }
     
     public void weaponHit () {
