@@ -15,11 +15,52 @@ public class Enemy {
     public int currHp;
     public Weapon weapon;
     public Armor armor;
-
+    public Player player;
+    
     public Enemy() {
         
     }
-
+    
+    public void weaponHit () {
+        int dmg = weapon.getAtk();
+        player.getDamage(dmg);
+    }
+    
+    public void getDamage(int dmg){
+       currHp = currHp - dmg;
+       boolean tot = obGestorben();
+       if(tot = true){
+            dead();
+        }
+    }
+    
+    public boolean obGestorben(){
+        boolean gestorben;
+        if(currHp <= 0){
+            gestorben = true;
+        } 
+        else{
+            gestorben = false;
+        }
+            return gestorben;
+    }
+    
+    public void dead(){
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public String getName() {
         return name;
     }

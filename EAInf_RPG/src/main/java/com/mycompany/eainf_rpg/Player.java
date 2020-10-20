@@ -14,17 +14,41 @@ public class Player {
     public int currHp;
     public Weapon weapon;
     public Armor armor;
+    public Enemy enemy;
 
-    public Player() {
+    public Player(String name) {
         maxHp = 100;
         currHp = 100;
+        this.name = name;
     }
 
+    public void weaponHit () {
+        int dmg = weapon.getAtk();
+        enemy.getDamage(dmg);
+    }
+
+    public void getDamage(int dmg){
+        currHp = currHp - dmg;
+        boolean tot = obGestorben();
+        if(tot = true){
+            dead();
+        }
+    }
     
+    public boolean obGestorben(){
+        boolean gestorben;
+        if(currHp <= 0){
+            gestorben = true;
+        } 
+        else{
+            gestorben = false;
+        }
+        return gestorben;
+    }
     
-    
-    
-    
+    public void dead(){
+        
+    }
     
     
     
