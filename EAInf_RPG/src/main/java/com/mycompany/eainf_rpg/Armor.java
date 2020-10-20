@@ -11,4 +11,15 @@ package com.mycompany.eainf_rpg;
  */
 public class Armor {
     
+    public String name;
+    public String def;
+    public String desc;
+    
+    
+    public Armor(String name, String def, String desc) {
+        this.def = def;
+        this.name = name;
+        this.desc = desc;
+    }
+    
 }

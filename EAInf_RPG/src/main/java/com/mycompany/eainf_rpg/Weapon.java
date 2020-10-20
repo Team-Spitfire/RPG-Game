@@ -15,10 +15,12 @@ public class Weapon {
 
     public String name;
     public int atk;
+    public String desc;
 
-    public Weapon(String name, int atk) {
+    public Weapon(String name, int atk, String desc) {
         this.name = name;
         this.atk = atk;
+        this.desc = desc;
     }
 
 }
