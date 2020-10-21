@@ -8,15 +8,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.HomescreenController">
    <children>
-      <Button layoutX="242.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="42.0" prefWidth="116.0" text="Start" />
-      <Button layoutX="271.0" layoutY="236.0" mnemonicParsing="false" onAction="#btnOptions" text="Options" />
-      <ImageView fitHeight="400.0" fitWidth="488.0" layoutX="88.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="WAIT" />
          </cursor>
          <image>
-            <Image url="@../../../../../../assets/Frost%20Profile%20pic.jpg" />
+            <Image url="@../../../../../../Assets/Frost%20Profile%20pic.jpg" />
          </image>
       </ImageView>
+      <Button layoutX="271.0" layoutY="236.0" mnemonicParsing="false" onAction="#btnOptions" text="Options" />
+      <Button layoutX="242.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="42.0" prefWidth="116.0" text="Start" />
    </children>
 </AnchorPane>
