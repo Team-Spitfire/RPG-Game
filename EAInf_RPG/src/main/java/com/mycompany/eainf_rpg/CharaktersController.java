@@ -33,11 +33,11 @@ public class CharaktersController implements Initializable {
     
     
     
-    @FXML
+    @FXML 
     private void addChar(ActionEvent event) throws IOException {
         App.setRoot("Game");
-        //Player.setName(charName.getText());
-        
-    }
+        App.getPlayer().setName(charName.getText());
+        System.out.println(App.getPlayer().getName());
+    } 
     
 }
