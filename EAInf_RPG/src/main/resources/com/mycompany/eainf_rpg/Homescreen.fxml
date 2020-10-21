@@ -15,7 +15,7 @@
             <Cursor fx:constant="WAIT" />
          </cursor>
          <image>
-            <Image url="@../../../../../../Inf-Projekt%20Bilder/Frost%20Profile%20pic.jpg" />
+            <Image url="@../../../../../../assets/Frost%20Profile%20pic.jpg" />
          </image>
       </ImageView>
    </children>
