@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package com.mycompany.eainf_rpg;
-
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -14,7 +15,7 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author hanne
+ * @author ben bartel
  */
 public class CharaktersController implements Initializable {
 
@@ -27,6 +28,16 @@ public class CharaktersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
+    
+    
+    
+    @FXML
+    private void addChar(ActionEvent event) throws IOException {
+        App.setRoot("Game");
+        //Player.setName(charName.getText());
+        
+    }
     
 }
