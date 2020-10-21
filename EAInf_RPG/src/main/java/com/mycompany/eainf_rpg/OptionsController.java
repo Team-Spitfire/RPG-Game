@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,6 +29,12 @@ public class OptionsController implements Initializable {
 
     @FXML
     private void checkTipsTricks(ActionEvent event) {
+    }
+    
+    @FXML
+    private void toHomescreen(ActionEvent event) throws IOException {
+        App.setRoot("Homescreen");
+        
     }
     
 }
