@@ -5,6 +5,8 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.IOException;
+
 /**
  *
  * @author benbartel
@@ -22,7 +24,7 @@ public class Enemy {
         currHp = 100;
     }
     
-    public void weaponHit () {
+    public void weaponHit () throws IOException {
         int dmg = weapon.getAtk();
         player.getDamage(dmg);
     }
