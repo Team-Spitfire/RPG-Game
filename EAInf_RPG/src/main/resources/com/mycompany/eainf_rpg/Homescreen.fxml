@@ -8,9 +8,8 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.HomescreenController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
-         
          <image>
-            <Image url="file:/Users/benbartel/Desktop/RPG-Game/EAInf_RPG/src/main/java/pictures/Frost%20Profile%20pic.jpg" />
+            <Image url="@../pictures/test_image.jpg" />
          </image>
       </ImageView>
       <Button layoutX="271.0" layoutY="236.0" mnemonicParsing="false" onAction="#btnOptions" text="Options" />
