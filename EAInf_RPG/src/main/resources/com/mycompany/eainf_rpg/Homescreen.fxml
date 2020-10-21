@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <cursor>
-            <Cursor fx:constant="WAIT" />
+            <Cursor fx:constant="CROSSHAIR" />
          </cursor>
          <image>
             <Image url="@../../../../../../Assets/Frost%20Profile%20pic.jpg" />
