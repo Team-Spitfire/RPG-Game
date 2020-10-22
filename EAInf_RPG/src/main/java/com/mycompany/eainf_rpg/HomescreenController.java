@@ -37,7 +37,7 @@ public class HomescreenController implements Initializable {
     }    
 
     @FXML
-    public void btnStart(ActionEvent event) throws IOException {
+    private void btnStart(ActionEvent event) throws IOException {
         App.setRoot("Charakters");
         
     }
