@@ -29,7 +29,7 @@ public class GameController implements Initializable {
     @FXML
     Label currHpLabel = new Label("currHp");
     Label maxHpLabel = new Label("maxHp");
-    Image image3 = new Image("https://drive.google.com/file/d/1UxU4DNQf2K7mGSKK7-mUvqAkavWLWEMG/preview", 100, 0, false, false);
+    Image image3 = new Image("https://i.ibb.co/2K6Tz3c/Armor1.png", 100, 0, false, false);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
