@@ -11,20 +11,31 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
  *
- * @author hanne
+ * @author benbartel
  */
+
 public class GameController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
+    @FXML
+    Label myLabel = new Label("Start");
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        String testtext = "hallo";
+        //String currHp = Integer.toString();
+        myLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
+
     }    
 
     

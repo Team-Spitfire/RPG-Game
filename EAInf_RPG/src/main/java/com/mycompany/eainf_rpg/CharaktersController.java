@@ -40,4 +40,10 @@ public class CharaktersController implements Initializable {
         System.out.println(App.getPlayer().getName());
     } 
     
+    @FXML 
+    private void btnback(ActionEvent event) throws IOException {
+        App.setRoot("Homescreen");
+        
+    } 
+    
 }
