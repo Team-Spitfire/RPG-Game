@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
 /**
@@ -28,6 +29,7 @@ public class GameController implements Initializable {
     @FXML
     Label currHpLabel = new Label("currHp");
     Label maxHpLabel = new Label("maxHp");
+    Image image3 = new Image("https://drive.google.com/file/d/1UxU4DNQf2K7mGSKK7-mUvqAkavWLWEMG/preview", 100, 0, false, false);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -36,6 +38,7 @@ public class GameController implements Initializable {
         //String currHp = Integer.toString();
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
+        
     }    
 
     
