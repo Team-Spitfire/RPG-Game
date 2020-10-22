@@ -10,8 +10,8 @@
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
-            <Label fx:id="currHpLabel" layoutX="26.0" layoutY="369.0" text="CurrHP" />
-            <Label fx:id="maxHpLabel" layoutX="135.0" layoutY="361.0" text="maxHP" />
+            <Label fx:id="currHpLabel" layoutX="14.0" layoutY="361.0" text="CurrHP" />
+            <Label fx:id="maxHpLabel" layoutX="74.0" layoutY="361.0" text="maxHP" />
             <ImageView fx:id="itemSlot3" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../../../../../../../../Desktop/Alles/Bilder+Videos/Galaxy%20Wallaper1.jpg" />
@@ -25,6 +25,11 @@
             <ImageView fx:id="itemSlot1" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../../java/pictures/Sword1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnPause" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/pictures/Frost%20Profile%20pic.jpg" />
                </image>
             </ImageView>
          </children></Pane>

@@ -30,8 +30,11 @@ public class CharaktersController implements Initializable {
     private ImageView itemSlot2;
     @FXML
     private ImageView itemSlot1;
-    @FXML
     private TextField charName;
+    @FXML
+    private Label maxHpLabel;
+    @FXML
+    private ImageView btnPause;
 
 
     /**
@@ -45,14 +48,12 @@ public class CharaktersController implements Initializable {
     
     
     
-    @FXML
     private void addChar(ActionEvent event) throws IOException {
         App.setRoot("Game");
         App.getPlayer().setName(charName.getText());
         System.out.println(App.getPlayer().getName());
     } 
     
-    @FXML
     private void btnback(ActionEvent event) throws IOException {
         App.setRoot("Homescreen");
         
