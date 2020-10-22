@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -25,6 +26,12 @@ public class CharaktersController implements Initializable {
     private Label maxHpLabel;
     @FXML
     private Label currHpLabel;
+    @FXML
+    private ImageView itemSlot3;
+    @FXML
+    private ImageView itemSlot2;
+    @FXML
+    private ImageView itemSlot1;
 
     /**
      * Initializes the controller class.
