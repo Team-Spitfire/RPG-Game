@@ -26,16 +26,16 @@ public class GameController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    Label myLabel = new Label("Start");
-    
+    Label currHpLabel = new Label("currHp");
+    Label maxHpLabel = new Label("maxHp");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         String testtext = "hallo";
         //String currHp = Integer.toString();
-        myLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
-
+        currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
+        maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
     }    
 
     
