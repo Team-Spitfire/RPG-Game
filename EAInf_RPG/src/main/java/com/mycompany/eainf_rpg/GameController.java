@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -29,8 +30,17 @@ public class GameController implements Initializable {
      */
     @FXML
     Label currHpLabel = new Label("currHp");
+    @FXML
     Label maxHpLabel = new Label("maxHp");
-    
+    @FXML
+    private ImageView itemSlot3;
+    @FXML
+    private ImageView itemSlot2;
+    @FXML
+    private ImageView itemSlot1;
+    @FXML
+    private ProgressBar progressBar;
+        
     
     
     @Override
@@ -43,6 +53,11 @@ public class GameController implements Initializable {
         
         
     }    
+
+    @FXML
+    private void btnSettings(ActionEvent event) throws IOException {
+        App.setRoot("Options");
+    }
 
     
 }
