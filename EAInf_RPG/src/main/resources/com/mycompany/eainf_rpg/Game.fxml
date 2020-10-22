@@ -24,7 +24,7 @@
             </ImageView>
             <ImageView fx:id="itemSlot1" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../../java/pictures/Sword1.png" />
+                  <Image url="https://drive.google.com/file/d/1UxU4DNQf2K7mGSKK7-mUvqAkavWLWEMG/view" />
                </image>
             </ImageView>
          </children></Pane>
