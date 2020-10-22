@@ -25,7 +25,7 @@ import javafx.scene.text.Text;
 
 public class GameController implements Initializable {
 
-    /**
+    /** 
      * Initializes the controller class.
      */
     @FXML
@@ -39,10 +39,10 @@ public class GameController implements Initializable {
     @FXML
     private ImageView itemSlot1;
     @FXML
-    private ProgressBar progressBar;
+    private static ProgressBar hpProgressBar;
         
     
-    
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -53,11 +53,18 @@ public class GameController implements Initializable {
         
         
     }    
-
+    
+    @FXML
+    public static void setProgress(Double progress){
+        
+        hpProgressBar.setProgress(progress);
+    }
+    
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
     }
-
+    
+    
     
 }
