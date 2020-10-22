@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -35,7 +36,10 @@ public class CharaktersController implements Initializable {
     private Label maxHpLabel;
     @FXML
     private ImageView btnPause;
-
+        
+    @FXML
+    private ProgressBar progressBar;
+        
 
     /**
      * Initializes the controller class.
@@ -58,5 +62,7 @@ public class CharaktersController implements Initializable {
         App.setRoot("Homescreen");
         
     } 
+    
+    
     
 }
