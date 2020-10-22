@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -21,6 +24,7 @@ public class CharaktersController implements Initializable {
 
     @FXML
     private TextField charName;
+        
 
     /**
      * Initializes the controller class.
@@ -33,11 +37,19 @@ public class CharaktersController implements Initializable {
     
     
     
-    @FXML 
+    @FXML
     private void addChar(ActionEvent event) throws IOException {
         App.setRoot("Game");
         App.getPlayer().setName(charName.getText());
         System.out.println(App.getPlayer().getName());
     } 
+    
+    @FXML
+    private void btnback(ActionEvent event) throws IOException {
+        App.setRoot("Homescreen");
+        
+    } 
+    
+    
     
 }
