@@ -12,8 +12,8 @@
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
-            <Label fx:id="currHpLabel" layoutX="14.0" layoutY="370.0" text="CurrHP" />
-            <Label fx:id="maxHpLabel" layoutX="63.0" layoutY="370.0" text="maxHP" />
+            <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="15.0" layoutY="372.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
+            <Label fx:id="maxHpLabel" layoutX="42.0" layoutY="371.0" text="maxHP" />
             <ImageView fx:id="itemSlot3" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" pickOnBounds="true">
                <image>
                   <Image url="https://i.ibb.co/n3FfT6K/Frost-Profile-pic.jpg" />
@@ -26,8 +26,9 @@
                <image>
                   <Image url="https://i.ibb.co/8DJ4sFw/Sword1.png" />
                </image></ImageView>
-            <ProgressBar fx:id="hpProgressBar" layoutX="111.0" layoutY="370.0" prefWidth="200.0" progress="1.0" />
+            <ProgressBar fx:id="hpProgressBar" layoutX="89.0" layoutY="371.0" prefWidth="200.0" progress="1.0" />
             <Button layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="56.0" prefWidth="56.0" text="Settings" />
+            <Label alignment="CENTER" layoutX="37.0" layoutY="371.0" text="/" />
             
          </children></Pane>
    </children>

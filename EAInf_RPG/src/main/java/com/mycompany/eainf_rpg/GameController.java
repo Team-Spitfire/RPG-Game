@@ -54,7 +54,6 @@ public class GameController implements Initializable {
         
     }    
     
-    @FXML
     public static void setProgress(Double progress){
         
         hpProgressBar.setProgress(progress);
