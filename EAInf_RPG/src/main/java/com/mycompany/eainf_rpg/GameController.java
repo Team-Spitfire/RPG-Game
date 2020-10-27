@@ -38,10 +38,11 @@ public class GameController implements Initializable {
     private ImageView itemSlot2;
     @FXML
     private ImageView itemSlot1;
-    private static ProgressBar hpProgressBar;
+    
     @FXML
     private ProgressBar testProgressBar;
-    static ProgressBar progressBarTest = new ProgressBar();
+    
+    static ProgressBar hpProgressBar = new ProgressBar();
     
     
      
@@ -52,15 +53,15 @@ public class GameController implements Initializable {
         //String currHp = Integer.toString();
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
-        progressBarTest.setProgress(0.8);
+        hpProgressBar.setProgress(0.8);
+        App.getPlayer().setCurrHp(60);
         
    
         
     }
     
-    public static void setProgress(Double progress){
-        
-        progressBarTest.setProgress(progress);
+    public void hpProgressBar(){
+        hpProgressBar.setProgress(App.getPlayer().getCurrHp()/100);
     }
     
     @FXML
@@ -69,8 +70,13 @@ public class GameController implements Initializable {
     }
 
     @FXML
-    private void setHpProgressBar(ActionEvent event) {
-        progressBarTest.setProgress(0.5);
+    private void setHpProgressBar() {
+        hpProgressBar.setProgress(0.5);
+        System.out.println(hpProgressBar.getProgress());
+    }
+
+    public static ProgressBar getHpProgressBar() {
+        return hpProgressBar;
     }
     
     
