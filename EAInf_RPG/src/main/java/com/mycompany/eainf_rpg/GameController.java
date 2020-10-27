@@ -38,9 +38,11 @@ public class GameController implements Initializable {
     private ImageView itemSlot2;
     @FXML
     private ImageView itemSlot1;
-    @FXML
     private static ProgressBar hpProgressBar;
-        
+    @FXML
+    private ProgressBar testProgressBar;
+    
+    
     
      
     @Override
@@ -50,9 +52,11 @@ public class GameController implements Initializable {
         //String currHp = Integer.toString();
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
+        hpProgressBar.setProgress(1.0);
         
+   
         
-    }    
+    }
     
     public static void setProgress(Double progress){
         
@@ -62,6 +66,11 @@ public class GameController implements Initializable {
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
+    }
+
+    @FXML
+    private void setHpProgressBar(ActionEvent event) {
+        testProgressBar.setProgress(0.5);
     }
     
     
