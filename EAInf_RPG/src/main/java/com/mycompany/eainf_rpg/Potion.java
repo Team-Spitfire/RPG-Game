@@ -12,11 +12,13 @@ package com.mycompany.eainf_rpg;
 public class Potion {
     public String name;
     public int healValue;
+    public int rare;
     public String desc;
 
-    public Potion(String name, int healValue, String desc) {
+    public Potion(String name, int healValue, int rare, String desc) {
         this.name = name;
         this.healValue = healValue;
+        this.rare = rare;
         this.desc = desc;
     }
 

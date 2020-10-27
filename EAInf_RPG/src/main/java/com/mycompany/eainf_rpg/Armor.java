@@ -13,11 +13,13 @@ public class Armor {
 
     public String name;
     public int def;
+    public int rare;
     public String desc;
 
-    public Armor(String name, int def, String desc) {
-        this.def = def;
+    public Armor(String name, int def, int rare, String desc) {
         this.name = name;
+        this.def = def;
+        this.rare = rare;
         this.desc = desc;
     }
 
