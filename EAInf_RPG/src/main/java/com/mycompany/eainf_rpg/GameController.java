@@ -41,7 +41,7 @@ public class GameController implements Initializable {
     private static ProgressBar hpProgressBar;
     @FXML
     private ProgressBar testProgressBar;
-    
+    static ProgressBar progressBarTest = new ProgressBar();
     
     
      
@@ -52,7 +52,7 @@ public class GameController implements Initializable {
         //String currHp = Integer.toString();
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
-        hpProgressBar.setProgress(1.0);
+        progressBarTest.setProgress(0.8);
         
    
         
@@ -60,7 +60,7 @@ public class GameController implements Initializable {
     
     public static void setProgress(Double progress){
         
-        hpProgressBar.setProgress(progress);
+        progressBarTest.setProgress(progress);
     }
     
     @FXML
@@ -70,7 +70,7 @@ public class GameController implements Initializable {
 
     @FXML
     private void setHpProgressBar(ActionEvent event) {
-        testProgressBar.setProgress(0.5);
+        progressBarTest.setProgress(0.5);
     }
     
     
