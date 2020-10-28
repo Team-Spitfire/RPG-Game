@@ -68,13 +68,14 @@ public class GameController implements Initializable {
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
     }
-
-    @FXML
-    private void setHpProgressBar() {
+    
+    public void setHpProgressBar(){
         hpProgressBar.setProgress(0.5);
-        System.out.println(hpProgressBar.getProgress());
+        System.out.println(hpProgressBar);
     }
+    
 
+        
     public static ProgressBar getHpProgressBar() {
         return hpProgressBar;
     }
