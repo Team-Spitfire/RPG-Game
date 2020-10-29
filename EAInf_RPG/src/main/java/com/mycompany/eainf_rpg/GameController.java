@@ -8,6 +8,7 @@ package com.mycompany.eainf_rpg;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -103,20 +104,40 @@ public class GameController implements Initializable {
     
     
     @FXML
-    void keyPressed(KeyEvent event) {
+    void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W:    testPerson.getTransforms().addAll(translateYUp); break;
-                case S:  testPerson.getTransforms().addAll(translateYDown); break;
-                case A:  testPerson.getTransforms().addAll(translateXLeft); break;
-                case D: testPerson.getTransforms().addAll(translateXRight);  break;
+                case W:    testPerson.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
+                case S:  testPerson.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
+                case A:  testPerson.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
+                case D: testPerson.getTransforms().addAll(translateXRight); checkPersonCoord(); break;
                 
         default:
             break;
             }
         }
     
-    public void checkPersonCoord(){
+    public void checkPersonCoord() throws IOException{
         
+        int coordY = (int) testPerson.getY();
+        int coordX = (int) testPerson.getX();
+        
+        if(coordY < 0){
+            //App.setRoot("Game");
+            System.out.println("oben");
+        }
+        else if (coordY > 400){
+            //App.setRoot("Game");
+            System.out.println("unten");
+        }
+        else if (coordX < 0){
+            //App.setRoot("Game");
+            System.out.println("links");
+        }
+        else if (coordX > 600){
+            //App.setRoot("Game");
+            System.out.println("rechts");
+        }
+        else{System.out.println("");}
     }
     
     
