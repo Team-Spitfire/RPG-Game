@@ -130,6 +130,37 @@ public class GameController implements Initializable {
     }
     
     
+    
+        @FXML
+        void keyPressed(KeyEvent event) {
+            switch (event.getCode()) {
+                    case W:    testPerson.getTransforms().addAll(translateYUp); break;
+                    case S:  testPerson.getTransforms().addAll(translateYDown); break;
+                    case A:  testPerson.getTransforms().addAll(translateXLeft); break;
+                    case D: testPerson.getTransforms().addAll(translateXRight); break;
+                    //case SHIFT:  break;
+            default:
+                break;
+            }
+        }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     private void moveCircleOnKeyPress(Scene Game) {
     .setOnKeyPressed(new EventHandler<KeyEvent>() {
