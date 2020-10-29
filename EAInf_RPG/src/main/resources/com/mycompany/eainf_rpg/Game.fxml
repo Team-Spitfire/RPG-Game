@@ -15,12 +15,13 @@
             <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="15.0" layoutY="372.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
             <Label fx:id="maxHpLabel" layoutX="42.0" layoutY="371.0" text="maxHP" />
             <ImageView fx:id="itemSlot3" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" pickOnBounds="true">
-               <image>
-                  <Image url="https://i.ibb.co/n3FfT6K/Frost-Profile-pic.jpg" />
-               </image></ImageView>
+                <image>
+                   
+                </image>
+               </ImageView>
             <ImageView fx:id="itemSlot2" fitHeight="56.0" fitWidth="56.0" layoutX="467.0" layoutY="330.0" pickOnBounds="true">
                <image>
-                  <Image url="https://i.ibb.co/2K6Tz3c/Armor1.png" />
+                  <Image url="@Sword1.png" />
                </image></ImageView>
             <ImageView fx:id="itemSlot1" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" pickOnBounds="true">
                <image>
@@ -36,9 +37,7 @@
                   <Image url="https://www.onlygfx.com/wp-content/uploads/2017/06/man-silhouette-3.png" />
                </image>
             </ImageView>
-            
-            
-            
+            <ImageView fx:id="imageViewTest" fitHeight="150.0" fitWidth="200.0" layoutX="204.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
    </children>
 </AnchorPane>

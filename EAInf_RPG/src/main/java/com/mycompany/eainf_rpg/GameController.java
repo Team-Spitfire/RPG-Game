@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.transform.Translate;
@@ -40,6 +42,11 @@ public class GameController implements Initializable {
     @FXML
     private ImageView itemSlot1;
     
+    private String pathArmor1 = "https://i.ibb.co/2K6Tz3c/Armor1.png";
+    private String pathArmor2 = "https://i.ibb.co/3FxGV8x/Armor2.png";
+    private String pathArmor3 = "";
+    private String pathWeapon1 = "";
+    private String pathWeapon2 = "";
     
     @FXML
     static ProgressBar hpProgressBar = new ProgressBar();
@@ -47,18 +54,16 @@ public class GameController implements Initializable {
     @FXML
     private ImageView testPerson;
     
+    Image image4 = new Image("file:Armor1.png", 0, 100, false, false);
     
-    //@FXML
-    //private Circle person = new Circle(10, Color.RED);
-    
-    //Group groupTest = new Group(person);
     
     Translate translateXRight = new Translate();       
     Translate translateYUp = new Translate();
     Translate translateXLeft = new Translate();       
     Translate translateYDown = new Translate();
+    
     @FXML
-    private ImageView itemSlot31;
+    private ImageView imageViewTest;
     
     
     
@@ -67,23 +72,27 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //FileInputStream inputstream = new FileInputStream("Documents/Github/RPG-Game/src/main/java/pictures/Armor3.png");
+        //String imagePath = "Sword1.png";
+        Image image3 = new Image(pathArmor1, 100, 0, false, false);
+    
+        
+        
         
         String testtext = "hallo";
-        //String currHp = Integer.toString();
+        
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
         hpProgressBar.setProgress(0.8);
         App.getPlayer().setCurrHp(60);
         
-        //person.setCenterX(150.0f); 
-        //person.setCenterY(200.0f); 
+        
         
         translateXRight.setX(30);
         translateYUp.setY(-30);
         translateXLeft.setX(-30);
         translateYDown.setY(30);
         
-        //moveCircleOnKeyPress();
     }
     
     public void hpProgressBar(){
@@ -124,20 +133,22 @@ public class GameController implements Initializable {
     
     
     
-        @FXML
-        void keyPressed(KeyEvent event) {
-            switch (event.getCode()) {
-                    case W:    testPerson.getTransforms().addAll(translateYUp); break;
-                    case S:  testPerson.getTransforms().addAll(translateYDown); break;
-                    case A:  testPerson.getTransforms().addAll(translateXLeft); break;
-                    case D: testPerson.getTransforms().addAll(translateXRight); break;
+    @FXML
+    void keyPressed(KeyEvent event) {
+        switch (event.getCode()) {
+                case W:    testPerson.getTransforms().addAll(translateYUp); break;
+                case S:  testPerson.getTransforms().addAll(translateYDown); break;
+                case A:  testPerson.getTransforms().addAll(translateXLeft); break;
+                case D: testPerson.getTransforms().addAll(translateXRight);  break;
                     //case SHIFT:  break;
-            default:
-                break;
+        default:
+            break;
             }
         }
     
-
+    public void checkPersonCoord(){
+        
+    }
     
     
     @FXML
