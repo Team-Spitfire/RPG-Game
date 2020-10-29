@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" onKeyPressed="#keyPressed" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.GameController">
+<AnchorPane id="AnchorPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.GameController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
@@ -35,16 +35,11 @@
                   <Image url="https://www.onlygfx.com/wp-content/uploads/2017/06/man-silhouette-3.png" />
                </image>
             </ImageView>
-            
-            <Button layoutX="492.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXRight" text="ButtonXRight" />
-            <Button layoutX="422.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXLeft" text="ButtonXLeft" />
             <ImageView fx:id="itemSlot31" fitHeight="56.0" fitWidth="56.0" layoutX="540.0" layoutY="340.0" pickOnBounds="true">
                <image>
                   <Image url="https://i.ibb.co/n3FfT6K/Frost-Profile-pic.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="418.0" layoutY="320.0" mnemonicParsing="false" onAction="#btnMovePersonYUp" text="ButtonYUp" />
-            <Button layoutX="492.0" layoutY="321.0" mnemonicParsing="false" onAction="#btnMovePersonYDown" text="ButtonYDown" />
          </children></Pane>
    </children>
 </AnchorPane>

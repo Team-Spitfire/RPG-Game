@@ -61,11 +61,12 @@ public class GameController implements Initializable {
     
     //Group groupTest = new Group(person);
     
-    @FXML
     Translate translateXRight = new Translate();       
     Translate translateYUp = new Translate();
     Translate translateXLeft = new Translate();       
     Translate translateYDown = new Translate();
+    @FXML
+    private ImageView itemSlot31;
     
     
     
