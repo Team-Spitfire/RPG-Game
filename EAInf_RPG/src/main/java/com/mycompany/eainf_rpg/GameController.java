@@ -35,12 +35,6 @@ public class GameController implements Initializable {
     Label currHpLabel = new Label("currHp");
     @FXML
     Label maxHpLabel = new Label("maxHp");
-    @FXML
-    private ImageView itemSlot3;
-    @FXML
-    private ImageView itemSlot2;
-    @FXML
-    private ImageView itemSlot1;
     
     private String pathArmor1 = "https://i.ibb.co/2K6Tz3c/Armor1.png";
     private String pathArmor2 = "https://i.ibb.co/3FxGV8x/Armor2.png";
@@ -64,6 +58,24 @@ public class GameController implements Initializable {
     
     @FXML
     private ImageView imageViewTest;
+    @FXML
+    private ImageView itemSlot3Lvl1;
+    @FXML
+    private ImageView itemSlot2Lvl1;
+    @FXML
+    private ImageView itemSlot1Lvl1;
+    @FXML
+    private ImageView itemSlot1Lvl2;
+    @FXML
+    private ImageView itemSlot2Lvl2;
+    @FXML
+    private ImageView itemSlot3Lvl2;
+    @FXML
+    private ImageView itemSlot1Lvl3;
+    @FXML
+    private ImageView itemSlot2Lvl3;
+    @FXML
+    private ImageView itemSlot3Lvl3;
     
     
     

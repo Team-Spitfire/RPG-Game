@@ -14,18 +14,18 @@
          <children>
             <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="15.0" layoutY="372.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
             <Label fx:id="maxHpLabel" layoutX="42.0" layoutY="371.0" text="maxHP" />
-            <ImageView fx:id="itemSlot3" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" pickOnBounds="true">
+            <ImageView fx:id="itemSlot3Lvl1" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" pickOnBounds="true">
                 <image>
-                   
+                   <Image url="@Potion1.jpg" />
                 </image>
                </ImageView>
-            <ImageView fx:id="itemSlot2" fitHeight="56.0" fitWidth="56.0" layoutX="467.0" layoutY="330.0" pickOnBounds="true">
+            <ImageView fx:id="itemSlot2Lvl1" fitHeight="56.0" fitWidth="56.0" layoutX="467.0" layoutY="330.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Armor1.png" />
+               </image></ImageView>
+            <ImageView fx:id="itemSlot1Lvl1" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" pickOnBounds="true">
                <image>
                   <Image url="@Sword1.png" />
-               </image></ImageView>
-            <ImageView fx:id="itemSlot1" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" pickOnBounds="true">
-               <image>
-                  <Image url="https://i.ibb.co/8DJ4sFw/Sword1.png" />
                </image></ImageView>
             <ProgressBar fx:id="hpProgressBar" layoutX="89.0" layoutY="371.0" prefWidth="200.0" progress="1.0" />
             <Button layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="56.0" prefWidth="56.0" text="Settings" />
@@ -38,6 +38,36 @@
                </image>
             </ImageView>
             <ImageView fx:id="imageViewTest" fitHeight="150.0" fitWidth="200.0" layoutX="204.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="itemSlot1Lvl2" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Sword2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="itemSlot2Lvl2" fitHeight="56.0" fitWidth="56.0" layoutX="467.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Armor2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="itemSlot3Lvl2" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Potion2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="itemSlot1Lvl3" fitHeight="56.0" fitWidth="56.0" layoutX="404.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Sword3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="itemSlot2Lvl3" fitHeight="56.0" fitWidth="56.0" layoutX="467.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Armor3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="itemSlot3Lvl3" fitHeight="56.0" fitWidth="56.0" layoutX="530.0" layoutY="330.0" opacity="0.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Potion3.jpg" />
+               </image>
+            </ImageView>
          </children></Pane>
    </children>
 </AnchorPane>
