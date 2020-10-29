@@ -121,26 +121,18 @@ public class GameController implements Initializable {
     
     public void btnMovePersonYUp(ActionEvent event) throws IOException {
         testPerson.getTransforms().addAll(translateYUp); 
-        //person.setTranslateY(10.0);
-        System.out.println("testloly");
     }
     
     public void btnMovePersonXRight(ActionEvent event) throws IOException {
         testPerson.getTransforms().addAll(translateXRight);
-        //person.setTranslateX(10.0);
-        System.out.println("testlolx");
     }
     
     public void btnMovePersonYDown(ActionEvent event) throws IOException {
         testPerson.getTransforms().addAll(translateYDown); 
-        //person.setTranslateY(10.0);
-        System.out.println("testloly");
     }
     
     public void btnMovePersonXLeft(ActionEvent event) throws IOException {
         testPerson.getTransforms().addAll(translateXLeft); 
-        //person.setTranslateX(10.0);
-        System.out.println("testlolx");
     }
     
     
