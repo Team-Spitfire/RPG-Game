@@ -36,11 +36,6 @@ public class GameController implements Initializable {
     @FXML
     Label maxHpLabel = new Label("maxHp");
     
-    private String pathArmor1 = "https://i.ibb.co/2K6Tz3c/Armor1.png";
-    private String pathArmor2 = "https://i.ibb.co/3FxGV8x/Armor2.png";
-    private String pathArmor3 = "";
-    private String pathWeapon1 = "";
-    private String pathWeapon2 = "";
     
     @FXML
     static ProgressBar hpProgressBar = new ProgressBar();
@@ -83,22 +78,11 @@ public class GameController implements Initializable {
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        //FileInputStream inputstream = new FileInputStream("Documents/Github/RPG-Game/src/main/java/pictures/Armor3.png");
-        //String imagePath = "Sword1.png";
-        Image image3 = new Image(pathArmor1, 100, 0, false, false);
-    
-        
-        
-        
-        String testtext = "hallo";
         
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
         hpProgressBar.setProgress(0.8);
         App.getPlayer().setCurrHp(60);
-        
-        
         
         translateXRight.setX(30);
         translateYUp.setY(-30);
@@ -118,25 +102,6 @@ public class GameController implements Initializable {
     
     
     
-    
-    public void btnMovePersonYUp(ActionEvent event) throws IOException {
-        testPerson.getTransforms().addAll(translateYUp); 
-    }
-    
-    public void btnMovePersonXRight(ActionEvent event) throws IOException {
-        testPerson.getTransforms().addAll(translateXRight);
-    }
-    
-    public void btnMovePersonYDown(ActionEvent event) throws IOException {
-        testPerson.getTransforms().addAll(translateYDown); 
-    }
-    
-    public void btnMovePersonXLeft(ActionEvent event) throws IOException {
-        testPerson.getTransforms().addAll(translateXLeft); 
-    }
-    
-    
-    
     @FXML
     void keyPressed(KeyEvent event) {
         switch (event.getCode()) {
@@ -144,7 +109,7 @@ public class GameController implements Initializable {
                 case S:  testPerson.getTransforms().addAll(translateYDown); break;
                 case A:  testPerson.getTransforms().addAll(translateXLeft); break;
                 case D: testPerson.getTransforms().addAll(translateXRight);  break;
-                    //case SHIFT:  break;
+                
         default:
             break;
             }
@@ -161,8 +126,6 @@ public class GameController implements Initializable {
         System.out.println(getHpProgressBar());
     }
     
-
-        
     public static double getHpProgressBar() {
         return hpProgressBar.getProgress();
     }
