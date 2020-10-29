@@ -9,20 +9,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.scene.transform.Translate;
 
 /**
@@ -146,57 +138,6 @@ public class GameController implements Initializable {
         }
     
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    private void moveCircleOnKeyPress(Scene Game) {
-    .setOnKeyPressed(new EventHandler<KeyEvent>() {
-      @Override public void handle(KeyEvent event) {
-        switch (event.getCode()) {
-          case UP:    person.getTransforms().addAll(translateYUp); break;
-          case RIGHT: person.getTransforms().addAll(translateXRight); break;
-          case DOWN:  person.getTransforms().addAll(translateYDown); break;
-          case LEFT:  person.getTransforms().addAll(translateXLeft); break;
-        }
-      }
-    });
-    }
-    
-    Game.addEventListener('keydown', function(e) {
-    switch (e.keyCode) {
-        case 37:
-            alert('left');
-            break;
-        case 38:
-           alert('up');
-            break;
-        case 39:
-            alert('right');
-            break;
-        case 40:
-            alert('down');
-            break;
-    }
-    });
-    */
-    
-    
-    
-    
     
     
     @FXML
