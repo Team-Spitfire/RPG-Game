@@ -37,12 +37,6 @@
                </image>
             </ImageView>
             
-
-            
-            <Button layoutX="492.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXRight" text="ButtonXRight" />
-            <Button layoutX="422.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXLeft" text="ButtonXLeft" />
-            <Button layoutX="418.0" layoutY="320.0" mnemonicParsing="false" onAction="#btnMovePersonYUp" text="ButtonYUp" />
-            <Button layoutX="492.0" layoutY="321.0" mnemonicParsing="false" onAction="#btnMovePersonYDown" text="ButtonYDown" />
             
             
          </children></Pane>
