@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.GameController">
    <children>
@@ -30,7 +31,21 @@
             <Button layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="56.0" prefWidth="56.0" text="Settings" />
             <Label alignment="CENTER" layoutX="37.0" layoutY="371.0" text="/" />
             <Button layoutX="16.0" layoutY="330.0" mnemonicParsing="false" onAction="#setHpProgressBar" text="HPHALF" />
+            <ImageView fx:id="testPerson" fitHeight="70.0" fitWidth="93.0" layoutX="169.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                  <Image url="https://www.onlygfx.com/wp-content/uploads/2017/06/man-silhouette-3.png" />
+               </image>
+            </ImageView>
             
+            <Button layoutX="492.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXRight" text="ButtonXRight" />
+            <Button layoutX="422.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnMovePersonXLeft" text="ButtonXLeft" />
+            <ImageView fx:id="itemSlot31" fitHeight="56.0" fitWidth="56.0" layoutX="540.0" layoutY="340.0" pickOnBounds="true">
+               <image>
+                  <Image url="https://i.ibb.co/n3FfT6K/Frost-Profile-pic.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="418.0" layoutY="320.0" mnemonicParsing="false" onAction="#btnMovePersonYUp" text="ButtonYUp" />
+            <Button layoutX="492.0" layoutY="321.0" mnemonicParsing="false" onAction="#btnMovePersonYDown" text="ButtonYDown" />
          </children></Pane>
    </children>
 </AnchorPane>
