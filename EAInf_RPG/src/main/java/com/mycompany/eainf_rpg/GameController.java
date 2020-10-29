@@ -170,13 +170,13 @@ public class GameController implements Initializable {
     @FXML
     public void setHpProgressBar(){
         hpProgressBar.setProgress(0.5);
-        System.out.println(hpProgressBar);
+        System.out.println(getHpProgressBar());
     }
     
 
         
-    public static ProgressBar getHpProgressBar() {
-        return hpProgressBar;
+    public static double getHpProgressBar() {
+        return hpProgressBar.getProgress();
     }
     
     
