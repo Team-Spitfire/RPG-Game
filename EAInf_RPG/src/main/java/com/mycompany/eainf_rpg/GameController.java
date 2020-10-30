@@ -118,11 +118,11 @@ public class GameController implements Initializable {
     
     public void checkPersonCoord() throws IOException{
         
-        int coordY = (int) testPerson.getY();
-        int coordX = (int) testPerson.getX();
+        int coordY = (int) testPerson.getLayoutY();
+        int coordX = (int) testPerson.getLayoutX();
         
-        System.out.println(testPerson.getY());
-        System.out.println(testPerson.getX());
+        System.out.println(coordX);
+        System.out.println(coordY);
         
         if((int) testPerson.getY() == 0){
             //App.setRoot("Game");
@@ -160,6 +160,21 @@ public class GameController implements Initializable {
     
     public static double getHpProgressBar() {
         return hpProgressBar.getProgress();
+    }
+    
+    //Mit toFront() kann man ein Bild in den Vordergrund bringen
+    //hier mit drei btns gezeigt
+    @FXML
+    private void iSlotLvl1ToFr(ActionEvent event) throws IOException {
+        itemSlot1Lvl1.toFront();
+    }
+    @FXML
+    private void iSlotLvl2ToFr(ActionEvent event) throws IOException {
+        itemSlot1Lvl2.toFront();
+    }
+    @FXML
+    private void iSlotLvl3ToFr(ActionEvent event) throws IOException {
+        itemSlot1Lvl3.toFront();
     }
     
     
