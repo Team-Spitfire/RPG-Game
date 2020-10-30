@@ -121,25 +121,28 @@ public class GameController implements Initializable {
         int coordY = (int) testPerson.getY();
         int coordX = (int) testPerson.getX();
         
-        if(coordY < 0){
+        System.out.println(testPerson.getY());
+        System.out.println(testPerson.getX());
+        
+        if((int) testPerson.getY() == 0){
             //App.setRoot("Game");
-            System.out.println("oben");
-            testPerson.setY(380);
+            System.out.println("oben" + coordY);
+            //testPerson.setY(380);
             testPerson.setX(testPerson.getX());
         }
-        else if (coordY > 400){
+        else if ((int) testPerson.getY() > 380){
             //App.setRoot("Game");
             System.out.println("unten");
             testPerson.setY(20);
             testPerson.setX(testPerson.getX());
         }
-        else if (coordX < 0){
+        else if ((int) testPerson.getX() < 10){
             //App.setRoot("Game");
             System.out.println("links");
             testPerson.setX(580);
             testPerson.setY(testPerson.getY());
         }
-        else if (coordX > 600){
+        else if ((int) testPerson.getX() > 580){
             //App.setRoot("Game");
             System.out.println("rechts");
             testPerson.setX(20);
