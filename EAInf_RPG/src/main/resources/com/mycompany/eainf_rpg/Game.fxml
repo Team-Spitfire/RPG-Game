@@ -13,12 +13,6 @@
       <Pane fx:id="evrth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
             <Button fx:id="settingsBtn" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="56.0" prefWidth="56.0" text="Settings" />
-
-            <ImageView fx:id="testPerson" fitHeight="70.0" fitWidth="93.0" layoutX="60.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                  <Image url="https://www.onlygfx.com/wp-content/uploads/2017/06/man-silhouette-3.png" />
-               </image>
-            </ImageView>
             <Pane fx:id="itemSlot1" layoutX="390.0" layoutY="330.0" prefHeight="56.0" prefWidth="56.0">
                <children>
                   <ImageView fx:id="itemSlot1Lvl2" fitHeight="56.0" fitWidth="56.0" pickOnBounds="true">
@@ -88,6 +82,16 @@
             <Button layoutX="79.0" layoutY="113.0" mnemonicParsing="false" onAction="#iSlotLvl1ToFr" text="Button" />
             <Button layoutX="143.0" layoutY="113.0" mnemonicParsing="false" onAction="#iSlotLvl2ToFr" text="Button" />
             <Button layoutX="212.0" layoutY="113.0" mnemonicParsing="false" onAction="#iSlotLvl3ToFr" text="Button" />
+            <Pane fx:id="character" layoutX="53.0" layoutY="12.0" prefHeight="56.0" prefWidth="66.0">
+               <children>
+      
+                  <ImageView fx:id="testPerson" fitHeight="56.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="https://www.onlygfx.com/wp-content/uploads/2017/06/man-silhouette-3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children></Pane>
    </children>
 </AnchorPane>

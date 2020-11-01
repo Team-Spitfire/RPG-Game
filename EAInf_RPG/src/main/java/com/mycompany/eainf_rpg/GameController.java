@@ -13,11 +13,14 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.transform.Translate;
 
 /**
@@ -53,30 +56,41 @@ public class GameController implements Initializable {
     Translate translateYDown = new Translate();
     
     @FXML
-    private ImageView imageViewTest;
+    private static ImageView itemSlot3Lvl1;
     @FXML
-    private ImageView itemSlot3Lvl1;
+    private static ImageView itemSlot2Lvl1;
     @FXML
-    private ImageView itemSlot2Lvl1;
+    private static ImageView itemSlot1Lvl1;
     @FXML
-    private ImageView itemSlot1Lvl1;
+    private static ImageView itemSlot1Lvl2;
     @FXML
-    private ImageView itemSlot1Lvl2;
+    private static ImageView itemSlot2Lvl2;
     @FXML
-    private ImageView itemSlot2Lvl2;
+    private static ImageView itemSlot3Lvl2;
     @FXML
-    private ImageView itemSlot3Lvl2;
+    private static ImageView itemSlot1Lvl3;
     @FXML
-    private ImageView itemSlot1Lvl3;
+    private static ImageView itemSlot2Lvl3;
     @FXML
-    private ImageView itemSlot2Lvl3;
+    private static ImageView itemSlot3Lvl3;
     @FXML
-    private ImageView itemSlot3Lvl3;
+    private Pane evrth;
+    @FXML
+    private Button settingsBtn;
+    @FXML
+    private Pane itemSlot1;
+    @FXML
+    private Pane itemSlot2;
+    @FXML
+    private Pane itemSlot3;
+    @FXML
+    private Pane hpBarStuff;
+    @FXML
+    private Pane character;
     
     
-    
-    
-     
+    //
+    //initialize 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -85,12 +99,19 @@ public class GameController implements Initializable {
         hpProgressBar.setProgress(0.8);
         App.getPlayer().setCurrHp(60);
         
+        playerWeaponAdvance();
+
         translateXRight.setX(30);
         translateYUp.setY(-30);
         translateXLeft.setX(-30);
         translateYDown.setY(30);
         
     }
+    //
+    
+    
+    
+    
     
     public void hpProgressBar(){
         hpProgressBar.setProgress(App.getPlayer().getCurrHp()/100);
@@ -106,10 +127,10 @@ public class GameController implements Initializable {
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W:    testPerson.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
-                case S:  testPerson.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
-                case A:  testPerson.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
-                case D: testPerson.getTransforms().addAll(translateXRight); checkPersonCoord(); break;
+                case W:    character.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
+                case S:  character.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
+                case A:  character.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
+                case D: character.getTransforms().addAll(translateXRight); checkPersonCoord(); break;
                 
         default:
             break;
@@ -121,8 +142,8 @@ public class GameController implements Initializable {
         int coordY = (int) testPerson.getLayoutY();
         int coordX = (int) testPerson.getLayoutX();
         
-        System.out.println(coordX);
-        System.out.println(coordY);
+        System.out.println(character.getTranslateX());
+        System.out.println(character.getTranslateY());
         
         if((int) testPerson.getY() == 0){
             //App.setRoot("Game");
@@ -177,6 +198,41 @@ public class GameController implements Initializable {
         itemSlot1Lvl3.toFront();
     }
     
+    
+    
+    
+    
+    
+    
+    
+    @FXML
+    public static void playerWeaponAdvance(){
+        
+        if(App.getPlayer().getWeapon() == null){
+            itemSlot1Lvl1.setOpacity(0);
+            itemSlot1Lvl2.setOpacity(0);
+            itemSlot1Lvl3.setOpacity(0); 
+        }
+        else{
+            itemSlot1Lvl1.setOpacity(1);
+            itemSlot1Lvl2.setOpacity(1);
+            itemSlot1Lvl3.setOpacity(1); 
+            
+            switch (App.getPlayer().getWeaponLvl()) {
+                case 1:
+                   itemSlot1Lvl1.toFront();
+                    break;
+                case 2:
+                   itemSlot1Lvl2.toFront(); 
+                    break;
+                case 3:
+                   itemSlot1Lvl3.toFront(); 
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     
     
 }
