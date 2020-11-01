@@ -5,15 +5,12 @@
  */
 package com.mycompany.eainf_rpg;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -187,15 +184,15 @@ public class GameController implements Initializable {
     //hier mit drei btns gezeigt
     @FXML
     private void iSlotLvl1ToFr(ActionEvent event) throws IOException {
-        itemSlot1Lvl1.toFront();
+        App.getPlayer().upgradeWeapon();
     }
     @FXML
     private void iSlotLvl2ToFr(ActionEvent event) throws IOException {
-        itemSlot1Lvl2.toFront();
+        App.getPlayer().upgradeArmor();
     }
     @FXML
     private void iSlotLvl3ToFr(ActionEvent event) throws IOException {
-        itemSlot1Lvl3.toFront();
+        App.getPlayer().upgradePotion();
     }
     
     
@@ -209,14 +206,14 @@ public class GameController implements Initializable {
     public static void playerWeaponAdvance(){
         
         if(App.getPlayer().getWeapon() == null){
-            itemSlot1Lvl1.setOpacity(0);
-            itemSlot1Lvl2.setOpacity(0);
-            itemSlot1Lvl3.setOpacity(0); 
+            itemSlot1Lvl1.setOpacity(0.0);
+            itemSlot1Lvl2.setOpacity(0.0);
+            itemSlot1Lvl3.setOpacity(0.0); 
         }
         else{
-            itemSlot1Lvl1.setOpacity(1);
-            itemSlot1Lvl2.setOpacity(1);
-            itemSlot1Lvl3.setOpacity(1); 
+            itemSlot1Lvl1.setOpacity(1.0);
+            itemSlot1Lvl2.setOpacity(1.0);
+            itemSlot1Lvl3.setOpacity(1.0); 
             
             switch (App.getPlayer().getWeaponLvl()) {
                 case 1:
