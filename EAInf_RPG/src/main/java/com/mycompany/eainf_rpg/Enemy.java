@@ -24,7 +24,23 @@ public class Enemy {
         currHp = 100;
     }
     
-    public void weaponHit () throws IOException {
+    public void enemyTurn() throws IOException{
+        if(currHp < 10){
+            usePotion();
+        }
+        else{
+           // rangeCheck();
+        }
+    }
+    /*
+    public void rangeCheck(){
+        if(){
+            
+        }
+    }
+    */
+    
+    public void weaponHit() throws IOException {
         int dmg = weapon.getAtk();
         player.getDamage(dmg);
     }
@@ -52,6 +68,9 @@ public class Enemy {
         
     }
     
+    private void usePotion() {
+        
+    }
     
     
     
@@ -103,6 +122,7 @@ public class Enemy {
     public void setArmor(Armor armor) {
         this.armor = armor;
     }
+
     
     
            

@@ -5,8 +5,6 @@
  */
 package com.mycompany.eainf_rpg;
 
-import java.util.*;
-
 /**
  *
  * @author benbartel

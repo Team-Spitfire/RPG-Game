@@ -7,6 +7,7 @@ package com.mycompany.eainf_rpg;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -90,6 +91,10 @@ public class GameController implements Initializable {
     //initialize 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        itemSlot1Lvl1 = itemSlot1Lvl1;
+        
+        
         
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
@@ -184,7 +189,7 @@ public class GameController implements Initializable {
     //hier mit drei btns gezeigt
     @FXML
     private void iSlotLvl1ToFr(ActionEvent event) throws IOException {
-        App.getPlayer().upgradeWeapon();
+        itemSlot1Lvl1.toFront();
     }
     @FXML
     private void iSlotLvl2ToFr(ActionEvent event) throws IOException {
@@ -202,28 +207,28 @@ public class GameController implements Initializable {
     
     
     
-    @FXML
+    
     public static void playerWeaponAdvance(){
         
         if(App.getPlayer().getWeapon() == null){
-            itemSlot1Lvl1.setOpacity(0.0);
-            itemSlot1Lvl2.setOpacity(0.0);
-            itemSlot1Lvl3.setOpacity(0.0); 
+            //itemSlot1Lvl1.setOpacity(0.0);
+            //itemSlot1Lvl2.setOpacity(0.0);
+            //itemSlot1Lvl3.setOpacity(0.0); 
         }
         else{
-            itemSlot1Lvl1.setOpacity(1.0);
-            itemSlot1Lvl2.setOpacity(1.0);
-            itemSlot1Lvl3.setOpacity(1.0); 
+            //itemSlot1Lvl1.setOpacity(1.0);
+            //itemSlot1Lvl2.setOpacity(1.0);
+            //itemSlot1Lvl3.setOpacity(1.0); 
             
             switch (App.getPlayer().getWeaponLvl()) {
                 case 1:
-                   itemSlot1Lvl1.toFront();
+                   //itemSlot1Lvl1.toFront();
                     break;
                 case 2:
-                   itemSlot1Lvl2.toFront(); 
+                   //itemSlot1Lvl2.toFront(); 
                     break;
                 case 3:
-                   itemSlot1Lvl3.toFront(); 
+                   //itemSlot1Lvl3.toFront(); 
                     break;
                 default:
                     break;
