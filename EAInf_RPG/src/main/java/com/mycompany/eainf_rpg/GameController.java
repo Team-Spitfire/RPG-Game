@@ -87,7 +87,6 @@ public class GameController implements Initializable {
     private Pane character;
     
     
-    //
     //initialize 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -103,10 +102,10 @@ public class GameController implements Initializable {
         
         playerWeaponAdvance();
 
-        translateXRight.setX(30);
-        translateYUp.setY(-30);
-        translateXLeft.setX(-30);
-        translateYDown.setY(30);
+        translateXRight.setX(60);
+        translateYUp.setY(-60);
+        translateXLeft.setX(-60);
+        translateYDown.setY(60);
         
     }
     //
