@@ -154,26 +154,26 @@ public class GameController implements Initializable {
         if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
             
-            //testPerson.setY(380);
-            //testPerson.setX(testPerson.getX());
+            testPerson.setY(380);
+            testPerson.setX(testPerson.getX());
         }
         else if ((int) testPerson.getY() > 380){
             //App.setRoot("Game");
             
-            //testPerson.setY(20);
-            //testPerson.setX(testPerson.getX());
+            testPerson.setY(20);
+            testPerson.setX(testPerson.getX());
         }
         else if ((int) testPerson.getX() < 10){
             //App.setRoot("Game");
             
-            //testPerson.setX(580);
-            //testPerson.setY(testPerson.getY());
+            testPerson.setX(580);
+            testPerson.setY(testPerson.getY());
         }
         else if ((int) testPerson.getX() > 580){
             //App.setRoot("Game");
             
-            //testPerson.setX(20);
-            //testPerson.setY(testPerson.getY());
+            testPerson.setX(20);
+            testPerson.setY(testPerson.getY());
         }
         else{}
     }
