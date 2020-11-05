@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.GameController">
+   <children>
+      <Pane fx:id="evrth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <Pane fx:id="character" prefHeight="60.0" prefWidth="60.0">
+               <children>
+      
+                  <ImageView fx:id="testPerson" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@Character_Down_Ausgeschnitten.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               
+            </Pane>
+            <Button fx:id="settingsBtn" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="56.0" prefWidth="56.0" text="Settings" />
+            <Pane fx:id="itemSlot1" layoutX="390.0" layoutY="330.0" prefHeight="56.0" prefWidth="56.0">
+               <children>
+                  <ImageView fx:id="iSlot1Lvl1" fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sword1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot1Lvl2" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sword2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot1Lvl3" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sword3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="itemSlot2" layoutX="460.0" layoutY="330.0" prefHeight="56.0" prefWidth="56.0">
+               <children>
+                  <ImageView fx:id="iSlot2Lvl1" fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Armor1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot2Lvl2" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Armor2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot2Lvl3" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Armor3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="itemSlot3" layoutX="530.0" layoutY="330.0" prefHeight="56.0" prefWidth="56.0">
+               <children>
+                  <ImageView fx:id="iSlot3Lvl1" fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Potion1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot3Lvl2" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Potion2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSlot3Lvl3" fitHeight="56.0" fitWidth="56.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Potion3.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="hpBarStuff" layoutY="312.0" prefHeight="91.0" prefWidth="324.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="47.0" layoutY="58.0" text="/" />
+                  <Label fx:id="maxHpLabel" layoutX="51.0" layoutY="58.0" text="maxHP" />
+                  <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="6.0" layoutY="58.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
+                  <ProgressBar fx:id="hpBar" layoutX="102.0" layoutY="57.0" prefWidth="200.0" progress="1.0" />
+               </children>
+            </Pane>
+            <Button layoutX="79.0" layoutY="113.0" mnemonicParsing="false" onAction="#test1" text="Button" />
+            <Button layoutX="143.0" layoutY="113.0" mnemonicParsing="false" onAction="#test2" text="Button" />
+            <Button layoutX="212.0" layoutY="113.0" mnemonicParsing="false" onAction="#test3" text="Button" />
+            <Button layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#test4" text="Button" />
+         </children></Pane>
+   </children>
+</AnchorPane>
