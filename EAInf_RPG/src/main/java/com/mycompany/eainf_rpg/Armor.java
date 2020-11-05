@@ -31,6 +31,14 @@ public class Armor {
         this.def = def;
     }
 
+    public void setRare(int rare) {
+        this.rare = rare;
+    }
+
+    public int getRare() {
+        return rare;
+    }
+
     public void setDesc(String desc) {
         this.desc = desc;
     }
