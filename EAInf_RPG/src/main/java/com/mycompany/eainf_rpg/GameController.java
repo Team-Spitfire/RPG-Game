@@ -150,20 +150,17 @@ public class GameController implements Initializable {
         int yInt = (int)y;
         
         
-        System.out.println(xInt);
-        System.out.println(yInt);
+        System.out.println(this.character.getLayoutX());
+        System.out.println(this.character.getLayoutY());
         
         if(yInt <= 0){
             //App.setRoot("Game");
-            System.out.println("oben");
-            //testPerson.setY(380);
-            //testPerson.setX(testPerson.getX());
+            System.out.println();
+            
         }
         else if (yInt > 380){
             //App.setRoot("Game");
             System.out.println("unten");
-            //testPerson.setY(20);
-            //testPerson.setX(testPerson.getX());
         }
         else if (xInt < 10){
             //App.setRoot("Game");
