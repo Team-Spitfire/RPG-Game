@@ -193,7 +193,8 @@ public class GameController implements Initializable {
     
     
     
-    
+    //the btns for upgrading weapons/armor and potions
+    //not final
     @FXML
     public void test1(ActionEvent event) throws IOException {
         upgradeWeapon();
@@ -211,7 +212,7 @@ public class GameController implements Initializable {
     
     
     
-    
+    //brings specific item images to front and sets opacity to 1
     //ItemSlot 1 Images To Front
     public void toFront11(){
         iSlot1Lvl1.setOpacity(1);
@@ -256,7 +257,7 @@ public class GameController implements Initializable {
     
     
     
-    
+    //sets all opacities to 0, used if there is no item existing.
     public void allWeaponsOpto0(){
             iSlot1Lvl1.setOpacity(0.0);
             iSlot1Lvl2.setOpacity(0.0);
@@ -279,12 +280,13 @@ public class GameController implements Initializable {
     
     //Weapon UPGRADE
     public void playerWeaponAdvance(){
-        
+        //checks if the player has a weapon
         if(App.getPlayer().getWeapon() == null){
-             allWeaponsOpto0();
+            //if no, all weapon images become invisible
+            allWeaponsOpto0();
         }
         else{
-            
+            //if yes, it checks the current weapon lvl and brings the right one to the front
             switch (App.getPlayer().getWeaponLvl()) {
                 case 1:
                    toFront11();
@@ -303,7 +305,7 @@ public class GameController implements Initializable {
     
     //Armor UPGRADE
     public void playerArmorAdvance(){
-        
+        //same as one method above
         if(App.getPlayer().getArmor() == null){
              allArmorOpto0();
         }
@@ -327,7 +329,7 @@ public class GameController implements Initializable {
     
     //Potion UPGRADE
     public void playerPotionAdvance(){
-        
+        //same as one method above
         if(App.getPlayer().getPotion() == null){
              allPotionOpto0();
         }
@@ -349,19 +351,22 @@ public class GameController implements Initializable {
         }
     }
     
-    
+    //initates upgrade from gear
     public void upgradeWeapon(){
+        //gets current lvl and adds one
         int newWeaponLvl = App.getPlayer().getWeaponLvl() + 1;
+        //sets new lvl, one added
         App.getPlayer().setWeaponLvl(newWeaponLvl);
+        //this method checks lvl and brings the correct one to front
         playerWeaponAdvance();
     }
-    
+    //same as one method above, but for Armor
     public void upgradeArmor(){
         int newArmorLvl = App.getPlayer().getArmorLvl() + 1;
         App.getPlayer().setArmorLvl(newArmorLvl);
         playerArmorAdvance();
     }
-    
+    //same method above, but for Potion.
     public void upgradePotion(){
         int newPotionLvl = App.getPlayer().getPotionLvl() + 1;
         App.getPlayer().setPotionLvl(newPotionLvl);
