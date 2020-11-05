@@ -13,6 +13,7 @@
    <children>
       <Pane fx:id="evrth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
+            <ImageView fx:id="background4" fitHeight="400.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
             <Pane fx:id="character" prefHeight="60.0" prefWidth="60.0">
                <children>
       
