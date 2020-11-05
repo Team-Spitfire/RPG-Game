@@ -7,8 +7,8 @@ package com.mycompany.eainf_rpg;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -53,24 +53,7 @@ public class GameController implements Initializable {
     Translate translateXLeft = new Translate();       
     Translate translateYDown = new Translate();
     
-    @FXML
-    private static ImageView itemSlot3Lvl1;
-    @FXML
-    private static ImageView itemSlot2Lvl1;
-    @FXML
-    private static ImageView itemSlot1Lvl1;
-    @FXML
-    private static ImageView itemSlot1Lvl2;
-    @FXML
     private static ImageView itemSlot2Lvl2;
-    @FXML
-    private static ImageView itemSlot3Lvl2;
-    @FXML
-    private static ImageView itemSlot1Lvl3;
-    @FXML
-    private static ImageView itemSlot2Lvl3;
-    @FXML
-    private static ImageView itemSlot3Lvl3;
     @FXML
     private Pane evrth;
     @FXML
@@ -85,6 +68,24 @@ public class GameController implements Initializable {
     private Pane hpBarStuff;
     @FXML
     private Pane character;
+    @FXML
+    private ImageView iSlot1Lvl1;
+    @FXML
+    private ImageView iSlot1Lvl2;
+    @FXML
+    private ImageView iSlot1Lvl3;
+    @FXML
+    private ImageView iSlot2Lvl1;
+    @FXML
+    private ImageView iSlot2Lvl2;
+    @FXML
+    private ImageView iSlot3Lvl3;
+    @FXML
+    private ImageView iSlot3Lvl1;
+    @FXML
+    private ImageView iSlot3Lvl2;
+    @FXML
+    private ImageView iSlot2Lvl3;
     
     
     //
@@ -92,7 +93,7 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        itemSlot1Lvl1 = itemSlot1Lvl1;
+        //itemSlot1Lvl1 = itemSlot1Lvl1;
         
         
         
@@ -109,7 +110,7 @@ public class GameController implements Initializable {
         translateYDown.setY(30);
         
     }
-    //
+    
     
     
     
@@ -129,9 +130,9 @@ public class GameController implements Initializable {
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W:    character.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
-                case S:  character.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
-                case A:  character.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
+                case W: character.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
+                case S: character.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
+                case A: character.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
                 case D: character.getTransforms().addAll(translateXRight); checkPersonCoord(); break;
                 
         default:
@@ -144,7 +145,7 @@ public class GameController implements Initializable {
         int coordY = (int) testPerson.getLayoutY();
         int coordX = (int) testPerson.getLayoutX();
         
-        System.out.println(character.getTranslateX());
+        System.out.println(coordY);
         System.out.println(character.getTranslateY());
         
         if((int) testPerson.getY() == 0){
@@ -187,17 +188,24 @@ public class GameController implements Initializable {
     
     //Mit toFront() kann man ein Bild in den Vordergrund bringen
     //hier mit drei btns gezeigt
+    
+    //private void sortISlort
+    
+    
+    
+    
+    
     @FXML
-    private void iSlotLvl1ToFr(ActionEvent event) throws IOException {
-        itemSlot1Lvl1.toFront();
+    public void test1(ActionEvent event) throws IOException {
+        upgradeWeapon();
     }
     @FXML
-    private void iSlotLvl2ToFr(ActionEvent event) throws IOException {
-        App.getPlayer().upgradeArmor();
+    public void test2(ActionEvent event) throws IOException {
+        upgradeArmor();
     }
     @FXML
-    private void iSlotLvl3ToFr(ActionEvent event) throws IOException {
-        App.getPlayer().upgradePotion();
+    public void test3(ActionEvent event) throws IOException {
+        upgradePotion();
     }
     
     
@@ -205,35 +213,160 @@ public class GameController implements Initializable {
     
     
     
+    //ItemSlot 1 Images To Front
+    public void toFront11(){
+        iSlot1Lvl1.setOpacity(1);
+        iSlot1Lvl1.toFront();
+    }
+    public void toFront12(){
+        iSlot1Lvl2.setOpacity(1);
+        iSlot1Lvl2.toFront();
+    }
+    public void toFront13(){
+        iSlot1Lvl3.setOpacity(1);
+        iSlot1Lvl3.toFront();
+    }
+    //ItemSlot 2 Images To Front
+    public void toFront21(){
+        iSlot2Lvl1.setOpacity(1);
+        iSlot2Lvl1.toFront();
+    }
+    public void toFront22(){
+        iSlot2Lvl2.setOpacity(1);
+        iSlot2Lvl2.toFront();
+    }
+    public void toFront23(){
+        iSlot2Lvl3.setOpacity(1);
+        iSlot2Lvl3.toFront();
+    }
+    //ItemSlot 3 Images To Front
+    public void toFront31(){
+        iSlot3Lvl1.setOpacity(1);
+        iSlot3Lvl1.toFront();
+    }
+    public void toFront32(){
+        iSlot3Lvl2.setOpacity(1);
+        iSlot3Lvl2.toFront();
+    }
+    public void toFront33(){
+        iSlot3Lvl3.setOpacity(1);
+        iSlot3Lvl3.toFront();
+    }
     
     
     
-    public static void playerWeaponAdvance(){
+    
+    
+    
+    public void allWeaponsOpto0(){
+            iSlot1Lvl1.setOpacity(0.0);
+            iSlot1Lvl2.setOpacity(0.0);
+            iSlot1Lvl3.setOpacity(0.0);
+    }
+    
+    public void allArmorOpto0(){
+            iSlot2Lvl1.setOpacity(0.0);
+            iSlot2Lvl2.setOpacity(0.0);
+            iSlot2Lvl3.setOpacity(0.0);
+    }
+    
+    public void allPotionOpto0(){
+            iSlot3Lvl1.setOpacity(0.0);
+            iSlot3Lvl2.setOpacity(0.0);
+            iSlot3Lvl3.setOpacity(0.0);
+    }
+    
+    
+    
+    //Weapon UPGRADE
+    public void playerWeaponAdvance(){
         
         if(App.getPlayer().getWeapon() == null){
-            //itemSlot1Lvl1.setOpacity(0.0);
-            //itemSlot1Lvl2.setOpacity(0.0);
-            //itemSlot1Lvl3.setOpacity(0.0); 
+             allWeaponsOpto0();
         }
         else{
-            //itemSlot1Lvl1.setOpacity(1.0);
-            //itemSlot1Lvl2.setOpacity(1.0);
-            //itemSlot1Lvl3.setOpacity(1.0); 
             
             switch (App.getPlayer().getWeaponLvl()) {
                 case 1:
-                   //itemSlot1Lvl1.toFront();
+                   toFront11();
                     break;
                 case 2:
-                   //itemSlot1Lvl2.toFront(); 
+                   toFront12(); 
                     break;
                 case 3:
-                   //itemSlot1Lvl3.toFront(); 
+                   toFront13();
                     break;
                 default:
                     break;
             }
         }
+    }
+    
+    //Armor UPGRADE
+    public void playerArmorAdvance(){
+        
+        if(App.getPlayer().getArmor() == null){
+             allArmorOpto0();
+        }
+        else{
+            
+            switch (App.getPlayer().getArmorLvl()) {
+                case 1:
+                   toFront21();
+                    break;
+                case 2:
+                   toFront22(); 
+                    break;
+                case 3:
+                   toFront23();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+    //Potion UPGRADE
+    public void playerPotionAdvance(){
+        
+        if(App.getPlayer().getPotion() == null){
+             allPotionOpto0();
+        }
+        else{
+            
+            switch (App.getPlayer().getPotionLvl()) {
+                case 1:
+                   toFront31();
+                    break;
+                case 2:
+                   toFront32(); 
+                    break;
+                case 3:
+                   toFront33();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+    
+    public void upgradeWeapon(){
+        int newWeaponLvl = App.getPlayer().getWeaponLvl() + 1;
+        App.getPlayer().setWeaponLvl(newWeaponLvl);
+        playerWeaponAdvance();
+    }
+    
+    public void upgradeArmor(){
+        int newArmorLvl = App.getPlayer().getArmorLvl() + 1;
+        App.getPlayer().setArmorLvl(newArmorLvl);
+        playerArmorAdvance();
+    }
+    
+    public void upgradePotion(){
+        int newPotionLvl = App.getPlayer().getPotionLvl() + 1;
+        App.getPlayer().setPotionLvl(newPotionLvl);
+        playerPotionAdvance();
     }
     
     
