@@ -97,11 +97,6 @@ public class GameController implements Initializable {
         //App.getPlayer().setCurrHp(60);
         
         playerWeaponAdvance();
-
-        translateXRight.setX(60);
-        translateYUp.setY(-60);
-        translateXLeft.setX(-60);
-        translateYDown.setY(60);
         
         testPerson.setX(0);
         testPerson.setY(0);
