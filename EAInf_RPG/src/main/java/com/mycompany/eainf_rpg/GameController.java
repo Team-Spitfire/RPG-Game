@@ -7,6 +7,7 @@ package com.mycompany.eainf_rpg;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 import javafx.event.ActionEvent;
@@ -45,7 +46,6 @@ public class GameController implements Initializable {
     @FXML
     private ImageView testPerson;
     
-    Image image4 = new Image("file:Armor1.png", 0, 100, false, false);
     
     
     Translate translateXRight = new Translate();       
@@ -53,7 +53,6 @@ public class GameController implements Initializable {
     Translate translateXLeft = new Translate();       
     Translate translateYDown = new Translate();
     
-    private static ImageView itemSlot2Lvl2;
     @FXML
     private Pane evrth;
     @FXML
@@ -86,6 +85,8 @@ public class GameController implements Initializable {
     private ImageView iSlot3Lvl2;
     @FXML
     private ImageView iSlot2Lvl3;
+    @FXML
+    private ProgressBar hpBar;
     
     
     //initialize 
@@ -110,9 +111,18 @@ public class GameController implements Initializable {
         
     }
     
+    @FXML
+    public void test4(ActionEvent event) throws IOException {
+        App.getPlayer().getDamage(10);
+        updateHpBar();
+    }
     
-    
-    
+    public void updateHpBar(){
+        System.out.println(App.getPlayer().getCurrHp());
+        double barValue = App.getPlayer().getCurrHp() / 100;
+        hpBar.setProgress(barValue);
+        
+    }
     
     
     public void hpProgressBar(){
@@ -185,10 +195,7 @@ public class GameController implements Initializable {
         return hpProgressBar.getProgress();
     }
     
-    //Mit toFront() kann man ein Bild in den Vordergrund bringen
-    //hier mit drei btns gezeigt
     
-    //private void sortISlort
     
     
     

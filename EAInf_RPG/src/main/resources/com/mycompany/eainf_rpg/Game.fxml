@@ -15,7 +15,7 @@
             <Pane fx:id="character" layoutX="53.0" layoutY="12.0" prefHeight="60.0" prefWidth="60.0">
                <children>
       
-                  <ImageView fx:id="testPerson" fitHeight="56.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="testPerson" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                       <image>
                         <Image url="@Character_Down_Ausgeschnitten.png" />
                      </image>
@@ -87,11 +87,13 @@
                   <Label fx:id="maxHpLabel" layoutX="51.0" layoutY="58.0" text="maxHP" />
                   <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="6.0" layoutY="58.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
                   <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#setHpProgressBar" text="HPHALF" />
+                  <ProgressBar fx:id="hpBar" layoutX="100.0" layoutY="23.0" prefWidth="200.0" progress="1.0" />
                </children>
             </Pane>
             <Button layoutX="79.0" layoutY="113.0" mnemonicParsing="false" onAction="#test1" text="Button" />
             <Button layoutX="143.0" layoutY="113.0" mnemonicParsing="false" onAction="#test2" text="Button" />
             <Button layoutX="212.0" layoutY="113.0" mnemonicParsing="false" onAction="#test3" text="Button" />
+            <Button layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#test4" text="Button" />
          </children></Pane>
    </children>
 </AnchorPane>
