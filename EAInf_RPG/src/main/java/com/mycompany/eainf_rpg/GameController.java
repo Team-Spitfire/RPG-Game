@@ -141,15 +141,14 @@ public class GameController implements Initializable {
     
     public void checkPersonCoord() throws IOException{
         
-        int coordY = (int) testPerson.getLayoutY();
-        int coordX = (int) testPerson.getLayoutX();
         
         System.out.println(this.testPerson.getX());
         System.out.println(this.testPerson.getY());
         
-       
         
-        
+        if(testPerson.getX() == 288 && testPerson.getY() == 177){
+            enemyFound();
+        }
         
         if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
@@ -183,7 +182,9 @@ public class GameController implements Initializable {
         return hpBar.getProgress();
     }
     
-    
+    public void enemyFound(){
+        
+    }
     
     
     
