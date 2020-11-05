@@ -39,7 +39,7 @@ public class GameController implements Initializable {
     
     
     @FXML
-    private ImageView testPerson;
+    public ImageView testPerson;
     
     
     
@@ -143,35 +143,39 @@ public class GameController implements Initializable {
     
     public void checkPersonCoord() throws IOException{
         
-        int coordY = (int) testPerson.getLayoutY();
-        int coordX = (int) testPerson.getLayoutX();
+        double x = testPerson.getX();
+        double y = testPerson.getY();
         
-        System.out.println(coordY);
-        System.out.println(character.getTranslateY());
+        int xInt = (int)x;
+        int yInt = (int)y;
         
-        if((int) testPerson.getY() <= 0){
+        
+        System.out.println(xInt);
+        System.out.println(yInt);
+        
+        if(yInt <= 0){
             //App.setRoot("Game");
-            System.out.println("oben" + coordY);
+            System.out.println("oben");
             //testPerson.setY(380);
-            testPerson.setX(testPerson.getX());
+            //testPerson.setX(testPerson.getX());
         }
-        else if ((int) testPerson.getY() > 380){
+        else if (yInt > 380){
             //App.setRoot("Game");
             System.out.println("unten");
-            testPerson.setY(20);
-            testPerson.setX(testPerson.getX());
+            //testPerson.setY(20);
+            //testPerson.setX(testPerson.getX());
         }
-        else if ((int) testPerson.getX() < 10){
+        else if (xInt < 10){
             //App.setRoot("Game");
             System.out.println("links");
-            testPerson.setX(580);
-            testPerson.setY(testPerson.getY());
+            //testPerson.setX(580);
+            //testPerson.setY(testPerson.getY());
         }
-        else if ((int) testPerson.getX() > 580){
+        else if (xInt > 580){
             //App.setRoot("Game");
             System.out.println("rechts");
-            testPerson.setX(20);
-            testPerson.setY(testPerson.getY());
+            //testPerson.setX(20);
+            //testPerson.setY(testPerson.getY());
         }
         else{}
     }
