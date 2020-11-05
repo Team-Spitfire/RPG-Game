@@ -39,7 +39,7 @@ public class GameController implements Initializable {
     
     
     @FXML
-    public ImageView testPerson;
+    private ImageView testPerson;
     
     
     
@@ -97,11 +97,9 @@ public class GameController implements Initializable {
         //App.getPlayer().setCurrHp(60);
         
         playerWeaponAdvance();
-
-        translateXRight.setX(60);
-        translateYUp.setY(-60);
-        translateXLeft.setX(-60);
-        translateYDown.setY(60);
+        
+        testPerson.setX(0);
+        testPerson.setY(0);
         
     }
     
@@ -143,34 +141,37 @@ public class GameController implements Initializable {
     
     public void checkPersonCoord() throws IOException{
         
-        double x = testPerson.getX();
-        double y = testPerson.getY();
+        int coordY = (int) testPerson.getLayoutY();
+        int coordX = (int) testPerson.getLayoutX();
         
-        int xInt = (int)x;
-        int yInt = (int)y;
+        System.out.println(this.testPerson.getX());
+        System.out.println(this.testPerson.getY());
+        
+       
         
         
-        System.out.println(testPerson.getX());
-        System.out.println(testPerson.getY());
         
-        if(yInt <= 0){
+        if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
-            System.out.println();
             
+            //testPerson.setY(380);
+            //testPerson.setX(testPerson.getX());
         }
-        else if (yInt > 380){
+        else if ((int) testPerson.getY() > 380){
             //App.setRoot("Game");
-            System.out.println("unten");
+            
+            //testPerson.setY(20);
+            //testPerson.setX(testPerson.getX());
         }
-        else if (xInt < 10){
+        else if ((int) testPerson.getX() < 10){
             //App.setRoot("Game");
-            System.out.println("links");
+            
             //testPerson.setX(580);
             //testPerson.setY(testPerson.getY());
         }
-        else if (xInt > 580){
+        else if ((int) testPerson.getX() > 580){
             //App.setRoot("Game");
-            System.out.println("rechts");
+            
             //testPerson.setX(20);
             //testPerson.setY(testPerson.getY());
         }
