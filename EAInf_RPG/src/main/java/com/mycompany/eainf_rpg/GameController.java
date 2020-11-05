@@ -125,10 +125,7 @@ public class GameController implements Initializable {
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
     }
-    @FXML
-    private void btnUpdateHpBar(ActionEvent event) throws IOException {
-        updateHpBar();
-    }
+    
     
     
     @FXML
