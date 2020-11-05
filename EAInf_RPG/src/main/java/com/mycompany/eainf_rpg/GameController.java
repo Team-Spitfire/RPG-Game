@@ -129,10 +129,10 @@ public class GameController implements Initializable {
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W: testPerson.setY(testPerson.getY() - 20); checkPersonCoord(); break;
-                case S: testPerson.setY(testPerson.getY() + 20); checkPersonCoord(); break;
-                case A: testPerson.setX(testPerson.getX() - 20); checkPersonCoord(); break;
-                case D: testPerson.setX(testPerson.getX() + 20); checkPersonCoord(); break;
+                case W: testPerson.setY(testPerson.getY() - 16); checkPersonCoord(); break;
+                case S: testPerson.setY(testPerson.getY() + 16); checkPersonCoord(); break;
+                case A: testPerson.setX(testPerson.getX() - 16); checkPersonCoord(); break;
+                case D: testPerson.setX(testPerson.getX() + 16); checkPersonCoord(); break;
                 
         default:
             break;
@@ -153,7 +153,6 @@ public class GameController implements Initializable {
         
         if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
-            
             testPerson.setY(380);
             testPerson.setX(testPerson.getX());
         }
