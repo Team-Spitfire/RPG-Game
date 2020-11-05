@@ -31,6 +31,14 @@ public class Weapon {
         this.atk = atk;
     }
 
+    public void setRare(int rare) {
+        this.rare = rare;
+    }
+
+    public int getRare() {
+        return rare;
+    }
+
     public void setDesc(String desc) {
         this.desc = desc;
     }

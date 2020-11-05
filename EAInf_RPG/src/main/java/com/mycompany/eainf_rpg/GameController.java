@@ -294,7 +294,7 @@ public class GameController implements Initializable {
         }
         else{
             //if yes, it checks the current weapon lvl and brings the right one to the front
-            switch (App.getPlayer().getWeaponLvl()) {
+            switch (App.getPlayer().getWeapon().getRare()) {
                 case 1:
                    toFront11();
                     break;
@@ -318,7 +318,7 @@ public class GameController implements Initializable {
         }
         else{
             
-            switch (App.getPlayer().getArmorLvl()) {
+            switch (App.getPlayer().getArmor().getRare()) {
                 case 1:
                    toFront21();
                     break;
@@ -342,7 +342,7 @@ public class GameController implements Initializable {
         }
         else{
             
-            switch (App.getPlayer().getPotionLvl()) {
+            switch (App.getPlayer().getArmor().getRare()) {
                 case 1:
                    toFront31();
                     break;
@@ -361,22 +361,22 @@ public class GameController implements Initializable {
     //initates upgrade from gear
     public void upgradeWeapon(){
         //gets current lvl and adds one
-        int newWeaponLvl = App.getPlayer().getWeaponLvl() + 1;
+        int newWeaponLvl = App.getPlayer().getWeapon().getRare() + 1;
         //sets new lvl, one added
-        App.getPlayer().setWeaponLvl(newWeaponLvl);
+        App.getPlayer().getWeapon().setRare(newWeaponLvl);
         //this method checks lvl and brings the correct one to front
         playerWeaponAdvance();
     }
     //same as one method above, but for Armor
     public void upgradeArmor(){
-        int newArmorLvl = App.getPlayer().getArmorLvl() + 1;
-        App.getPlayer().setArmorLvl(newArmorLvl);
+        int newArmorLvl = App.getPlayer().getArmor().getRare() + 1;
+        App.getPlayer().getArmor().setRare(newArmorLvl);
         playerArmorAdvance();
     }
     //same method above, but for Potion.
     public void upgradePotion(){
-        int newPotionLvl = App.getPlayer().getPotionLvl() + 1;
-        App.getPlayer().setPotionLvl(newPotionLvl);
+        int newPotionLvl = App.getPlayer().getPotion().getRare() + 1;
+        App.getPlayer().getPotion().setRare(newPotionLvl);
         playerPotionAdvance();
     }
     

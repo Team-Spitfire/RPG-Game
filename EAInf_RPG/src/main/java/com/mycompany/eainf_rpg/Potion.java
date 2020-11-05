@@ -29,6 +29,14 @@ public class Potion {
         this.desc = desc;
     }
 
+    public void setRare(int rare) {
+        this.rare = rare;
+    }
+
+    public int getRare() {
+        return rare;
+    }
+
     public String getDesc() {
         return desc;
     }
