@@ -103,6 +103,9 @@ public class GameController implements Initializable {
         translateXLeft.setX(-60);
         translateYDown.setY(60);
         
+        testPerson.setX(0);
+        testPerson.setY(0);
+        
     }
     
     @FXML
@@ -146,32 +149,36 @@ public class GameController implements Initializable {
         int coordY = (int) testPerson.getLayoutY();
         int coordX = (int) testPerson.getLayoutX();
         
-        System.out.println(coordY);
-        System.out.println(character.getTranslateY());
+        System.out.println(this.testPerson.getX());
+        System.out.println(this.testPerson.getY());
+        
+       
+        
+        
         
         if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
-            System.out.println("oben" + coordY);
+            
             //testPerson.setY(380);
-            testPerson.setX(testPerson.getX());
+            //testPerson.setX(testPerson.getX());
         }
         else if ((int) testPerson.getY() > 380){
             //App.setRoot("Game");
-            System.out.println("unten");
-            testPerson.setY(20);
-            testPerson.setX(testPerson.getX());
+            
+            //testPerson.setY(20);
+            //testPerson.setX(testPerson.getX());
         }
         else if ((int) testPerson.getX() < 10){
             //App.setRoot("Game");
-            System.out.println("links");
-            testPerson.setX(580);
-            testPerson.setY(testPerson.getY());
+            
+            //testPerson.setX(580);
+            //testPerson.setY(testPerson.getY());
         }
         else if ((int) testPerson.getX() > 580){
             //App.setRoot("Game");
-            System.out.println("rechts");
-            testPerson.setX(20);
-            testPerson.setY(testPerson.getY());
+            
+            //testPerson.setX(20);
+            //testPerson.setY(testPerson.getY());
         }
         else{}
     }
