@@ -149,7 +149,7 @@ public class GameController implements Initializable {
         System.out.println(coordY);
         System.out.println(character.getTranslateY());
         
-        if((int) testPerson.getY() == 0){
+        if((int) testPerson.getY() <= 0){
             //App.setRoot("Game");
             System.out.println("oben" + coordY);
             //testPerson.setY(380);
