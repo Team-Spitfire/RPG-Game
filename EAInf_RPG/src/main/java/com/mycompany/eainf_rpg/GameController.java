@@ -131,10 +131,10 @@ public class GameController implements Initializable {
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W: character.getTransforms().addAll(translateYUp); checkPersonCoord(); break;
-                case S: character.getTransforms().addAll(translateYDown); checkPersonCoord(); break;
-                case A: character.getTransforms().addAll(translateXLeft); checkPersonCoord(); break;
-                case D: character.getTransforms().addAll(translateXRight); checkPersonCoord(); break;
+                case W: testPerson.setY(testPerson.getY() - 20); checkPersonCoord(); break;
+                case S: testPerson.setY(testPerson.getY() + 20); checkPersonCoord(); break;
+                case A: testPerson.setX(testPerson.getX() - 20); checkPersonCoord(); break;
+                case D: testPerson.setX(testPerson.getX() + 20); checkPersonCoord(); break;
                 
         default:
             break;
@@ -150,8 +150,8 @@ public class GameController implements Initializable {
         int yInt = (int)y;
         
         
-        System.out.println(this.character.getLayoutX());
-        System.out.println(this.character.getLayoutY());
+        System.out.println(testPerson.getX());
+        System.out.println(testPerson.getY());
         
         if(yInt <= 0){
             //App.setRoot("Game");
