@@ -83,11 +83,10 @@
             <Pane fx:id="hpBarStuff" layoutY="312.0" prefHeight="91.0" prefWidth="324.0">
                <children>
                   <Label alignment="CENTER" layoutX="47.0" layoutY="58.0" text="/" />
-                  <ProgressBar fx:id="hpProgressBar" layoutX="100.0" layoutY="57.0" prefWidth="200.0" progress="1.0" />
                   <Label fx:id="maxHpLabel" layoutX="51.0" layoutY="58.0" text="maxHP" />
                   <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="6.0" layoutY="58.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
                   <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#setHpProgressBar" text="HPHALF" />
-                  <ProgressBar fx:id="hpBar" layoutX="100.0" layoutY="23.0" prefWidth="200.0" progress="1.0" />
+                  <ProgressBar fx:id="hpBar" layoutX="102.0" layoutY="57.0" prefWidth="200.0" progress="1.0" />
                </children>
             </Pane>
             <Button layoutX="79.0" layoutY="113.0" mnemonicParsing="false" onAction="#test1" text="Button" />

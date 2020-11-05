@@ -7,16 +7,13 @@ package com.mycompany.eainf_rpg;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -40,8 +37,6 @@ public class GameController implements Initializable {
     Label maxHpLabel = new Label("maxHp");
     
     
-    @FXML
-    static ProgressBar hpProgressBar = new ProgressBar();
     
     @FXML
     private ImageView testPerson;
@@ -99,8 +94,7 @@ public class GameController implements Initializable {
         
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
-        hpProgressBar.setProgress(0.8);
-        App.getPlayer().setCurrHp(60);
+        //App.getPlayer().setCurrHp(60);
         
         playerWeaponAdvance();
 
@@ -118,16 +112,14 @@ public class GameController implements Initializable {
     }
     
     public void updateHpBar(){
-        System.out.println(App.getPlayer().getCurrHp());
-        double barValue = App.getPlayer().getCurrHp() / 100;
-        hpBar.setProgress(barValue);
+        double barValue = App.getPlayer().getCurrHp();
+        double barValueSmall = barValue / 100;
+        hpBar.setProgress(barValueSmall);
         
     }
     
     
-    public void hpProgressBar(){
-        hpProgressBar.setProgress(App.getPlayer().getCurrHp()/100);
-    }
+    
     
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
@@ -185,14 +177,9 @@ public class GameController implements Initializable {
     }
     
     
-    @FXML
-    public void setHpProgressBar(){
-        hpProgressBar.setProgress(0.5);
-        System.out.println(getHpProgressBar());
-    }
     
-    public static double getHpProgressBar() {
-        return hpProgressBar.getProgress();
+    public double getHpProgressBar() {
+        return hpBar.getProgress();
     }
     
     
