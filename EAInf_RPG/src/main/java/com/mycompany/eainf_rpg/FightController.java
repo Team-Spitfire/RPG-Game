@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -76,14 +77,14 @@ public class FightController implements Initializable {
     
     
     @FXML
-    private void btnAtck(ActionEvent event) {
+    private void btnAtck(ActionEvent event) throws IOException {
         App.getPlayer().weaponHit();
         atckBtn.setDisable(true);
         potionBtn.setDisable(true);
     }
 
     @FXML
-    private void btnUsePotion(ActionEvent event) {
+    private void btnUsePotion(ActionEvent event) throws IOException {
         App.getPlayer().usePotion();
         potionBtn.setDisable(true);
         atckBtn.setDisable(true);

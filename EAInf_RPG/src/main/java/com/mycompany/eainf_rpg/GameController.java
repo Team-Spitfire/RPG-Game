@@ -36,17 +36,16 @@ public class GameController implements Initializable {
     @FXML
     Label maxHpLabel = new Label("maxHp");
     
-    
+    static int activeScene = 5;
+    static double posX = 300;
+    static double posY = 150;
     
     @FXML
     private ImageView testPerson;
     
     
     
-    Translate translateXRight = new Translate();       
-    Translate translateYUp = new Translate();
-    Translate translateXLeft = new Translate();       
-    Translate translateYDown = new Translate();
+   
     
     @FXML
     private Pane evrth;
@@ -90,7 +89,9 @@ public class GameController implements Initializable {
         
         //itemSlot1Lvl1 = itemSlot1Lvl1;
         
-        
+        setPersonCoord();
+        testPerson.setX(getPosX());
+        testPerson.setY(getPosY());
         
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
@@ -98,8 +99,7 @@ public class GameController implements Initializable {
         
         playerWeaponAdvance();
         
-        testPerson.setX(0);
-        testPerson.setY(0);
+        
         
     }
     
@@ -139,41 +139,250 @@ public class GameController implements Initializable {
             }
         }
     
-    public void checkPersonCoord() throws IOException{
-        
-        
-        System.out.println(this.testPerson.getX());
-        System.out.println(this.testPerson.getY());
-        
-        
-        if(testPerson.getX() == 288 && testPerson.getY() == 177){
-            enemyFound();
+    public final void setPersonCoord() {
+        testPerson.setX(300);
+        testPerson.setY(150);
+    }
+
+    public void checkPersonCoord() throws IOException {
+
+        if ((int) testPerson.getY() >= 400 && activeScene == 1) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_4");
+            setActiveScene(4);
+            System.out.println("unten");
+            System.out.println("scene 4");
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 1) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_2");
+            setActiveScene(2);
+            System.out.println("rechts");
+            System.out.println("scene 2");
+
+        } else if ((int) testPerson.getY() >= 400 && activeScene == 2) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game");
+            setActiveScene(5);
+            System.out.println("unten");
+            System.out.println("scene 5");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 2) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_1");
+            setActiveScene(1);
+            System.out.println("links");
+            System.out.println("scene 1");
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 2) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_3");
+            setActiveScene(3);
+            System.out.println("rechts");
+            System.out.println("scene 3");
+
+        } else if ((int) testPerson.getY() >= 400 && activeScene == 3) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_6");
+            setActiveScene(6);
+            System.out.println("unten");
+            System.out.println("scene 6");
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 3) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_2");
+            setActiveScene(2);
+            System.out.println("links");
+            System.out.println("scene 2");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 4) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_1");
+            setActiveScene(1);
+            System.out.println("oben");
+            System.out.println("scene 1");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() >= 400 && activeScene == 4) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_7");
+            setActiveScene(8);
+            System.out.println("unten");
+            System.out.println("scene 7");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 4) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game");
+            setActiveScene(5);
+            System.out.println("rechts");
+            System.out.println("scene 5");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 5) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_2");
+            setActiveScene(2);
+            System.out.println("oben");
+            System.out.println("scene 2");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() >= 400 && activeScene == 5) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_8");
+            setActiveScene(8);
+            System.out.println("unten");
+            System.out.println("scene 8");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 5) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_4");
+            setActiveScene(4);
+            System.out.println("links");
+            System.out.println("scene 4");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 5) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_6");
+            setActiveScene(6);
+            System.out.println("rechts");
+            System.out.println("scene 6");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 6) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_3");
+            setActiveScene(2);
+            System.out.println("oben");
+            System.out.println("scene 3");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() >= 400 && activeScene == 6) {
+            setPosY(20);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_9");
+            setActiveScene(9);
+            System.out.println("unten");
+            System.out.println("scene 9");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 6) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_4");
+            setActiveScene(5);
+            System.out.println("links");
+            System.out.println("scene 5");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 7) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_4");
+            setActiveScene(4);
+            System.out.println("oben");
+            System.out.println("scene 4");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 7) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_8");
+            setActiveScene(8);
+            System.out.println("rechts");
+            System.out.println("scene 8");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 8) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game");
+            setActiveScene(5);
+            System.out.println("oben");
+            System.out.println("scene 5");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 8) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_7");
+            setActiveScene(7);
+            System.out.println("links");
+            System.out.println("scene 7");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() >= 600 && activeScene == 8) {
+            setPosX(20);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_9");
+            setActiveScene(9);
+            System.out.println("rechts");
+            System.out.println("scene 9");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getY() <= 0 && activeScene == 9) {
+            setPosY(380);
+            setPosX(testPerson.getX());
+            App.setRoot("Game_6");
+            setActiveScene(6);
+            System.out.println("oben");
+            System.out.println("scene 6");
+            System.out.println(activeScene);
+
+        } else if ((int) testPerson.getX() <= 0 && activeScene == 9) {
+            setPosX(580);
+            setPosY(testPerson.getY());
+            App.setRoot("Game_8");
+            setActiveScene(8);
+            System.out.println("links");
+            System.out.println("scene 8");
+            System.out.println(activeScene);
+
+        } else {
         }
-        
-        if((int) testPerson.getY() <= 0){
-            //App.setRoot("Game");
-            testPerson.setY(380);
-            testPerson.setX(testPerson.getX());
-        }
-        else if ((int) testPerson.getY() > 380){
-            //App.setRoot("Game");
-            
-            testPerson.setY(20);
-            testPerson.setX(testPerson.getX());
-        }
-        else if ((int) testPerson.getX() < 10){
-            //App.setRoot("Game");
-            
-            testPerson.setX(580);
-            testPerson.setY(testPerson.getY());
-        }
-        else if ((int) testPerson.getX() > 580){
-            //App.setRoot("Game");
-            
-            testPerson.setX(20);
-            testPerson.setY(testPerson.getY());
-        }
-        else{}
+    }
+
+    public static int getActiveScene() {
+        return activeScene;
+    }
+
+    public static void setActiveScene(int activeScene) {
+        GameController.activeScene = activeScene;
+    }
+
+    public static double getPosX() {
+        return posX;
+    }
+
+    public static void setPosX(double posX) {
+        GameController.posX = posX;
+    }
+
+    public static double getPosY() {
+        return posY;
+    }
+
+    public static void setPosY(double posY) {
+        GameController.posY = posY;
     }
     
     
