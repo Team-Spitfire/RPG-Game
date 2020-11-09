@@ -90,6 +90,7 @@ public class GameController implements Initializable {
         //itemSlot1Lvl1 = itemSlot1Lvl1;
         
         setPersonCoord();
+        updateHpBar();
         testPerson.setX(getPosX());
         testPerson.setY(getPosY());
         
