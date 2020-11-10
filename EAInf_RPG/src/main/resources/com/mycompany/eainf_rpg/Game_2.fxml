@@ -101,9 +101,9 @@
             <Button layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#test4" text="Button" />
             <Button fx:id="btnWeapon" layoutX="390.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnWeapon" prefHeight="27.0" prefWidth="56.0" text="Attack" />
             <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
-            <Pane fx:id="enemy2" layoutX="306.0" layoutY="30.0" prefHeight="50.0" prefWidth="50.0">
+            <Pane fx:id="enemy1" layoutX="306.0" layoutY="30.0" prefHeight="50.0" prefWidth="50.0">
                <children>
-                  <ImageView fx:id="enemyImg2" fitHeight="60.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="enemyImg1" fitHeight="60.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Minotaur.png" />
                      </image>
