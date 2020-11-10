@@ -26,20 +26,23 @@ public class Enemy {
     }
     
     public void enemyTurn() throws IOException{
+        
+        
+        
+        
+        
+        
         if(currHp < 10){
             usePotion();
         }
         else{
-            weaponHit();
-        }
-    }
-    /*
-    public void rangeCheck(){
-        if(){
+            
+            
+            
             
         }
     }
-    */
+    
     
     public void weaponHit() throws IOException {
         int dmg = weapon.getAtk();

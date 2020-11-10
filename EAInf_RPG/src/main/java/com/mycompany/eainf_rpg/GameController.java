@@ -17,7 +17,6 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.transform.Translate;
 
 /**
  * FXML Controller class
@@ -41,7 +40,7 @@ public class GameController implements Initializable {
     static double posY = 150;
     
     @FXML
-    private ImageView testPerson;
+    public ImageView testPerson;
     
     
     
@@ -81,6 +80,13 @@ public class GameController implements Initializable {
     private ImageView iSlot2Lvl3;
     @FXML
     private ProgressBar hpBar;
+    private ImageView enemyImg1;
+    @FXML
+    private ImageView background5;
+    @FXML
+    private Button btnWeapon;
+    @FXML
+    private Button btnPotion;
     
     
     //initialize 
@@ -96,7 +102,7 @@ public class GameController implements Initializable {
         
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
-        //App.getPlayer().setCurrHp(60);
+        btnWeapon.toFront();
         
         playerWeaponAdvance();
         
@@ -118,13 +124,49 @@ public class GameController implements Initializable {
     }
     
     
+    public boolean ifInEnemyRange(){
+        boolean inRange = false;
+
+        //Ob gegner links von spieler und in 40px entfernt ist.
+        if(enemyImg1.getX() < testPerson.getX() && enemyImg1.getX() > testPerson.getX() - 40){
+            //ob der gegner über der person in 40px entfernt ist
+            if(enemyImg1.getY() < testPerson.getY() && enemyImg1.getY() > testPerson.getY() - 40){
+                inRange = true;
+            }
+            else if(enemyImg1.getY() > testPerson.getY() && enemyImg1.getY() < testPerson.getY() + 40){
+                inRange = true;
+            }
+        }
+        //Ob gegner rechts von spieler und in 40px entfernt ist.
+        else if(enemyImg1.getX() > testPerson.getX() && enemyImg1.getX() < testPerson.getX() + 40){
+            //ob der gegner über der person in 40px entfernt ist
+            if(enemyImg1.getY() < testPerson.getY() && enemyImg1.getY() > testPerson.getY() - 40){
+                inRange = true;
+            }
+            else if(enemyImg1.getY() > testPerson.getY() && enemyImg1.getY() < testPerson.getY() + 40){
+                inRange = true;
+            }
+        }
+        else{inRange = false;}
+        return inRange;
+    }
+    
+    
     
     
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
     }
-    
+    @FXML
+    private void btnWeapon(ActionEvent event) throws IOException {
+        System.out.println("weapon");
+        App.getPlayer().weaponHit();
+    }
+    @FXML
+    private void btnPotion(ActionEvent event) throws IOException {
+        System.out.println("potion");
+    }
     
     
     @FXML
@@ -140,13 +182,16 @@ public class GameController implements Initializable {
             }
         }
     
-    public final void setPersonCoord() {
+    public void setPersonCoord() {
         testPerson.setX(300);
         testPerson.setY(150);
     }
 
     public void checkPersonCoord() throws IOException {
-
+        
+        
+        
+        
         if ((int) testPerson.getY() >= 400 && activeScene == 1) {
             setPosY(20);
             setPosX(testPerson.getX());

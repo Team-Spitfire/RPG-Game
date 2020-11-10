@@ -12,14 +12,13 @@
    <children>
       <Pane fx:id="evrth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
-            <ImageView fx:id="background5" fitHeight="400.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="background5" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Game_Background1_Tile5.png" />
                </image></ImageView>
-            <Pane fx:id="character" prefHeight="60.0" prefWidth="60.0">
+            <Pane fx:id="character" layoutX="14.0" layoutY="12.0" prefHeight="60.0" prefWidth="60.0">
                <children>
-      
-                  <ImageView fx:id="testPerson" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="testPerson" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                       <image>
                         <Image url="@Character_Down_Ausgeschnitten.png" />
                      </image>
@@ -97,6 +96,8 @@
             <Button layoutX="143.0" layoutY="113.0" mnemonicParsing="false" onAction="#test2" text="Button" />
             <Button layoutX="212.0" layoutY="113.0" mnemonicParsing="false" onAction="#test3" text="Button" />
             <Button layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#test4" text="Button" />
+            <Button fx:id="btnWeapon" layoutX="390.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnWeapon" prefHeight="27.0" prefWidth="56.0" text="Attack" />
+            <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
          </children></Pane>
    </children>
 </AnchorPane>

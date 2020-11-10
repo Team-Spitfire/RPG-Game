@@ -45,6 +45,7 @@
                         <Image url="@Sword3.png" />
                      </image>
                   </ImageView>
+                  
                </children>
             </Pane>
             <Pane fx:id="itemSlot2" layoutX="460.0" layoutY="330.0" prefHeight="56.0" prefWidth="56.0">
@@ -97,6 +98,8 @@
             <Button layoutX="143.0" layoutY="113.0" mnemonicParsing="false" onAction="#test2" text="Button" />
             <Button layoutX="212.0" layoutY="113.0" mnemonicParsing="false" onAction="#test3" text="Button" />
             <Button layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#test4" text="Button" />
+            <Button fx:id="btnWeapon" layoutX="390.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnWeapon" prefHeight="27.0" prefWidth="56.0" text="Attack" />
+            <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
          </children></Pane>
    </children>
 </AnchorPane>

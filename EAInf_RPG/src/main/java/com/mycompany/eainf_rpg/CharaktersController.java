@@ -40,6 +40,7 @@ public class CharaktersController implements Initializable {
         App.setRoot("Game");
         App.getPlayer().setName(charName.getText());
         System.out.println(App.getPlayer().getName());
+        
     } 
     
     @FXML    
