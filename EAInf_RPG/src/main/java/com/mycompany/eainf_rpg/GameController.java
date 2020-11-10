@@ -8,6 +8,7 @@ package com.mycompany.eainf_rpg;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -209,6 +210,13 @@ public class GameController implements Initializable {
         }
         if(enemyNear){
             System.out.println("true");
+            switch(activeScene){
+                case 1: App.getPlayer().setEnemy(App.getEnemy1());
+                case 3: App.getPlayer().setEnemy(App.getEnemy3());
+                case 7: App.getPlayer().setEnemy(App.getEnemy7());
+                case 9: App.getPlayer().setEnemy(App.getEnemy9());
+                
+            }
         
         }
         
