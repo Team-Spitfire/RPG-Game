@@ -101,7 +101,7 @@
             <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
             <Pane fx:id="enemy8" prefHeight="60.0" prefWidth="60.0">
                <children>
-                  <ImageView fx:id="enemyImg8" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="enemyImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
          </children></Pane>
