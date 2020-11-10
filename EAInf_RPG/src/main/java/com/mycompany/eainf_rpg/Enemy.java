@@ -17,13 +17,15 @@ public class Enemy {
     public int currHp;
     public Weapon weapon;
     public Armor armor;
-    
-    
-    public Enemy() {
-        genHp();
-        generateWeapon();
-        generateArmor();
+
+    public Enemy(String name, int maxHp, int currHp, Weapon weapon, Armor armor) {
+        this.name = name;
+        this.maxHp = maxHp;
+        this.currHp = currHp;
+        this.weapon = weapon;
+        this.armor = armor;
     }
+    
     
     public void enemyTurn() throws IOException{
         
@@ -98,45 +100,7 @@ public class Enemy {
         }
     }
     
-    private void generateWeapon(){
-        Weapon weaponLvl1 = new Weapon("WeaponLvl1", 10, 1, "Lvl1");
-        Weapon weaponLvl2 = new Weapon("WeaponLvl2", 15, 2, "Lvl2");
-        Weapon weaponLvl3 = new Weapon("WeaponLvl3", 20, 3, "Lvl3");
-        
-        switch (App.getPlayer().getLevel()) {
-            case 1:
-                weapon = weaponLvl1;
-                break;
-            case 2:
-                weapon = weaponLvl2;
-                break;
-            case 3:
-                weapon = weaponLvl3;
-                break;
-            default:
-                break;
-        }
-    }
     
-    private void generateArmor(){
-        Armor armorLvl1 = new Armor("ArmorLvl1", 10, 1, "Lvl1");
-        Armor armorLvl2 = new Armor("ArmorLvl2", 10, 2, "Lvl2");
-        Armor armorLvl3 = new Armor("ArmorLvl3", 10, 3, "Lvl3");
-        
-        switch (App.getPlayer().getLevel()) {
-            case 1:
-                armor = armorLvl1;
-                break;
-            case 2:
-                armor = armorLvl2;
-                break;
-            case 3:
-                armor = armorLvl3;
-                break;
-            default:
-                break;
-        }
-    }
     
     
     

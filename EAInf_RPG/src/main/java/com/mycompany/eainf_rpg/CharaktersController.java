@@ -37,6 +37,7 @@ public class CharaktersController implements Initializable {
     @FXML
     private void addChar(ActionEvent event) throws IOException {
         App.createPlayer();
+        App.createEnemies();
         App.setRoot("Game");
         App.getPlayer().setName(charName.getText());
         System.out.println(App.getPlayer().getName());
