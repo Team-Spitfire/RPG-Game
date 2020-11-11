@@ -39,20 +39,16 @@ public class StoreController implements Initializable{
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
             case W:
-                testPerson.setY(testPerson.getY() - 16);
-                //checkPersonCoord();
+                testPerson.setY(testPerson.getY() - 16);               
                 break;
             case S:
-                testPerson.setY(testPerson.getY() + 16);
-                //checkPersonCoord();
+                testPerson.setY(testPerson.getY() + 16);               
                 break;
             case A:
-                testPerson.setX(testPerson.getX() - 16);
-                //checkPersonCoord();
+                testPerson.setX(testPerson.getX() - 16);               
                 break;
             case D:
-                testPerson.setX(testPerson.getX() + 16);
-                //checkPersonCoord();
+                testPerson.setX(testPerson.getX() + 16);               
                 break;
 
             default:
