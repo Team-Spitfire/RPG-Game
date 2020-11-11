@@ -159,6 +159,7 @@ public class GameController implements Initializable {
     @FXML
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
+        App.getPlayer().usePotion();
     }
 
     @FXML
@@ -433,6 +434,10 @@ public class GameController implements Initializable {
         }
     }
 
+    
+    
+    
+    
     public static int getActiveScene() {
         return activeScene;
     }
