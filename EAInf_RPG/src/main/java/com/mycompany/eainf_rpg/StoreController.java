@@ -10,6 +10,7 @@ import static com.mycompany.eainf_rpg.GameController.getPosY;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -39,20 +40,36 @@ public class StoreController implements Initializable{
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
             case W:
-                testPerson.setY(testPerson.getY() - 16);               
+                testPerson.setY(testPerson.getY() - 16);
+                testPerson.getY();
+                testPerson.getX();
+                System.out.println(testPerson.getX() + " + " + testPerson.getY());
                 break;
             case S:
-                testPerson.setY(testPerson.getY() + 16);               
+                testPerson.setY(testPerson.getY() + 16);  
+                testPerson.getY();
+                testPerson.getX();
+                System.out.println(testPerson.getX() + " + " + testPerson.getY());
                 break;
             case A:
-                testPerson.setX(testPerson.getX() - 16);               
+                testPerson.setX(testPerson.getX() - 16);  
+                testPerson.getY();
+                testPerson.getX();
+                System.out.println(testPerson.getX() + " + " + testPerson.getY());
                 break;
             case D:
-                testPerson.setX(testPerson.getX() + 16);               
+                testPerson.setX(testPerson.getX() + 16);  
+                testPerson.getY();
+                testPerson.getX();
+                System.out.println(testPerson.getX() + " + " + testPerson.getY());
                 break;
 
             default:
                 break;
         }
+    }
+
+    @FXML
+    private void btnShop(ActionEvent event) {
     }
 }

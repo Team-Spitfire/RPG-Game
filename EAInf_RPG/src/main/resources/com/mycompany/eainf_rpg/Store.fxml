@@ -30,6 +30,7 @@
                
             </Pane>
             <Button mnemonicParsing="false" opacity="0.0" text="Button" />
+            <Button layoutX="210.0" layoutY="87.0" mnemonicParsing="false" onAction="#btnShop" text="Shop" />
          </children>
       </Pane>
    </children>
