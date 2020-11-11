@@ -187,8 +187,8 @@ public class GameController implements Initializable {
     }
 
     public void setPersonCoord() {
-        testPerson.setX(300);
-        testPerson.setY(150);
+        testPerson.setX(140);
+        testPerson.setY(198);
     }
 
     public void checkBounds() {
