@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,12 +9,15 @@
 <AnchorPane id="AnchorPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.StoreController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
+         
          <children>
+            
             <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@store_map.png" />
                </image>
             </ImageView>
+            
             <Pane fx:id="character" prefHeight="60.0" prefWidth="60.0">
                <children>
       
@@ -25,6 +29,7 @@
                </children>
                
             </Pane>
+            <Button disable="true" mnemonicParsing="false" opacity="0.0" text="Button" />
          </children>
       </Pane>
    </children>

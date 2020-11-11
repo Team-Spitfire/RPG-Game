@@ -83,6 +83,8 @@ public class GameController implements Initializable {
     @FXML
     private ImageView enemyImg;
     @FXML
+    private Label turnIndicator;
+    @FXML
     private ImageView background1;
     @FXML
     private Pane enemy1;
@@ -124,7 +126,7 @@ public class GameController implements Initializable {
     public void enemyTurn() throws IOException{
         btnWeapon.setDisable(true);
         btnPotion.setDisable(true);
-        //if()
+        turnIndicator.setText("It's the Enemy's Turn.");
         
         if(ifInEnemyRange()){
             if(App.getPlayer().getEnemy().getCurrHp() <= 10){
@@ -173,6 +175,7 @@ public class GameController implements Initializable {
     public void playerTurn(){
         btnWeapon.setDisable(false);
         btnPotion.setDisable(false);
+        turnIndicator.setText("It's your Turn.");
     }
     
     
@@ -258,7 +261,18 @@ public class GameController implements Initializable {
     private void btnWeapon(ActionEvent event) throws IOException, InterruptedException {
         System.out.println("weapon");
         App.getPlayer().weaponHit();
-        enemyTurn();
+        
+        if(App.getPlayer().getEnemy().getCurrHp() <= 0){
+            btnWeapon.setDisable(true);
+            btnPotion.setDisable(true);
+            enemyImg.setOpacity(0);
+            enemyImg.setY(1000);
+            enemyImg.setX(1000);
+            App.getPlayer().setEnemy(null);
+        }
+        else{enemyTurn();}
+        
+        
     }
 
     @FXML
@@ -321,7 +335,22 @@ public class GameController implements Initializable {
             System.out.println("there is a monster near you");
             btnWeapon.setDisable(false);
             btnPotion.setDisable(false);
-            App.getPlayer().setEnemy(App.getEnemy1());
+            
+            switch(activeScene){
+                case 1: App.getPlayer().setEnemy(App.getEnemy1()); break;
+                case 2: App.getPlayer().setEnemy(App.getEnemy2()); break;
+                case 3: App.getPlayer().setEnemy(App.getEnemy3()); break;
+                case 4: App.getPlayer().setEnemy(App.getEnemy4()); break;
+                case 6: App.getPlayer().setEnemy(App.getEnemy6()); break;
+                case 7: App.getPlayer().setEnemy(App.getEnemy7()); break;
+                case 8: App.getPlayer().setEnemy(App.getEnemy8()); break;
+                case 9: App.getPlayer().setEnemy(App.getEnemy9()); break;
+            }
+            
+            
+            
+            
+            
             playerTurn();
         }
 
@@ -601,17 +630,14 @@ public class GameController implements Initializable {
 
     //the btns for upgrading weapons/armor and potions
     //not final
-    @FXML
     public void test1(ActionEvent event) throws IOException {
         upgradeWeapon();
     }
 
-    @FXML
     public void test2(ActionEvent event) throws IOException {
         upgradeArmor();
     }
 
-    @FXML
     public void test3(ActionEvent event) throws IOException {
         upgradePotion();
     }
