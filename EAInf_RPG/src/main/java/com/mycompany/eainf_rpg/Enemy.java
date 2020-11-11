@@ -5,7 +5,6 @@
  */
 package com.mycompany.eainf_rpg;
 
-import static com.mycompany.eainf_rpg.Player.currHp;
 import java.io.IOException;
 
 /**
@@ -67,6 +66,7 @@ public class Enemy {
     }
 
     public void dead() {
+        
         App.getPlayer().enemyDied();
     }
 
