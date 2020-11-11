@@ -124,7 +124,7 @@ public class GameController implements Initializable {
     public void enemyTurn() throws IOException{
         btnWeapon.setDisable(true);
         btnPotion.setDisable(true);
-        
+        //if()
         
         if(ifInEnemyRange()){
             if(App.getPlayer().getEnemy().getCurrHp() <= 10){
@@ -255,7 +255,7 @@ public class GameController implements Initializable {
     }
 
     @FXML
-    private void btnWeapon(ActionEvent event) throws IOException {
+    private void btnWeapon(ActionEvent event) throws IOException, InterruptedException {
         System.out.println("weapon");
         App.getPlayer().weaponHit();
         enemyTurn();
@@ -265,6 +265,7 @@ public class GameController implements Initializable {
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
         App.getPlayer().usePotion();
+        updateHpBar();
         enemyTurn();
     }
 
