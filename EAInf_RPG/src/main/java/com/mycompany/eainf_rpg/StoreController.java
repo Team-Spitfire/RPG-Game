@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -27,6 +28,8 @@ public class StoreController implements Initializable{
     private Pane character;
     @FXML
     private ImageView testPerson;
+    @FXML
+    private Button btnToShop;
         
     
     @Override
@@ -40,35 +43,49 @@ public class StoreController implements Initializable{
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
             case W:
+                btnToShop.setDisable(true);
                 testPerson.setY(testPerson.getY() - 16);
                 testPerson.getY();
                 testPerson.getX();
                 System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkBtnAccess();
                 break;
             case S:
+                btnToShop.setDisable(true);
                 testPerson.setY(testPerson.getY() + 16);  
                 testPerson.getY();
                 testPerson.getX();
                 System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkBtnAccess();
                 break;
             case A:
+                btnToShop.setDisable(true);
                 testPerson.setX(testPerson.getX() - 16);  
                 testPerson.getY();
                 testPerson.getX();
                 System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkBtnAccess();
                 break;
             case D:
+                btnToShop.setDisable(true);
                 testPerson.setX(testPerson.getX() + 16);  
                 testPerson.getY();
                 testPerson.getX();
                 System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkBtnAccess();
                 break;
 
             default:
                 break;
         }
     }
-
+    
+    void checkBtnAccess() throws IOException{
+        if((int) testPerson.getX() >= 189 && testPerson.getX() <= 365 && (int) testPerson.getY() >= 116 && (int) testPerson.getY() <= 132){
+        btnToShop.setDisable(false);
+    }
+    }
+    
     @FXML
     private void btnShop(ActionEvent event) throws IOException {
         if((int) testPerson.getX() >= 189 && testPerson.getX() <= 365 && (int) testPerson.getY() >= 116 && (int) testPerson.getY() <= 132){
