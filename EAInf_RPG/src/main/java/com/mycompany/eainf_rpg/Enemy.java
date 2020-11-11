@@ -34,12 +34,13 @@ public class Enemy {
     }
 
     public void getDamage(int dmg) throws IOException {
-        System.out.println(currHp);
+        System.out.println("enemy hp" + currHp);
         
         currHp = currHp - dmg;
         System.out.println(currHp);
         boolean tot = obGestorben();
         if (tot == true) {
+            System.out.println("dead");
             dead();
         } else {
             
