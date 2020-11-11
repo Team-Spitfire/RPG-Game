@@ -29,7 +29,7 @@
                </children>
                
             </Pane>
-            <Button disable="true" mnemonicParsing="false" opacity="0.0" text="Button" />
+            <Button mnemonicParsing="false" opacity="0.0" text="Button" />
          </children>
       </Pane>
    </children>

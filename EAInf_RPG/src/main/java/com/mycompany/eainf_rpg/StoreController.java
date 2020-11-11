@@ -34,7 +34,7 @@ public class StoreController implements Initializable{
         testPerson.setY(356);
         
     }
-    
+   
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
