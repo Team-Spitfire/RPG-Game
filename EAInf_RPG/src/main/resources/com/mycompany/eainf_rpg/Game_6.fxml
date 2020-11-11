@@ -12,7 +12,7 @@
    <children>
       <Pane fx:id="evrth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
          <children>
-           <ImageView fx:id="background6" fitHeight="400.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+           <ImageView fx:id="background6" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Game_Background1_Tile6.png" />
                </image></ImageView>
@@ -98,7 +98,7 @@
             <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
             <Pane fx:id="enemy6" prefHeight="91.0" prefWidth="91.0">
                <children>
-                  <ImageView fx:id="enemyImg" fitHeight="91.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="enemyImg" fitHeight="91.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true" x="55.0" y="-5.0">
                      <image>
                         <Image url="@Demon.png" />
                      </image></ImageView>

@@ -98,7 +98,7 @@
             <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
             <Pane fx:id="enemy8" prefHeight="91.0" prefWidth="91.0">
                <children>
-                  <ImageView fx:id="enemyImg" fitHeight="91.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="enemyImg" fitHeight="91.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" x="170.0" y="300.0">
                      <image>
                         <Image url="@Demon.png" />
                      </image>

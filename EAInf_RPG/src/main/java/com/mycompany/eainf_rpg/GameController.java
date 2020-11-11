@@ -102,7 +102,7 @@ public class GameController implements Initializable {
         btnWeapon.toFront();
 
         playerWeaponAdvance();
-
+        btnWeapon.setDisable(true);
     }
 
     @FXML
@@ -201,39 +201,23 @@ public class GameController implements Initializable {
         System.out.println(testPerson.getY());
 
         boolean enemyNear = false;
-        switch (activeScene) {
-            case 1:
-                enemyNear = ifInEnemyRange();
-                break;
-            case 3:
-                enemyNear = ifInEnemyRange();
-                break;
-            case 7:
-                enemyNear = ifInEnemyRange();
-                break;
-            case 9:
-                enemyNear = ifInEnemyRange();
-                break;
-
-            default:
-                break;
+        
+        if(activeScene == 5){
+            System.out.println("no monster");
         }
+        else{enemyNear = ifInEnemyRange();}
+        
         if (enemyNear) {
-            System.out.println("true");
-            switch (activeScene) {
-                case 1:
-                    App.getPlayer().setEnemy(App.getEnemy1());
-                case 3:
-                    App.getPlayer().setEnemy(App.getEnemy3());
-                case 7:
-                    App.getPlayer().setEnemy(App.getEnemy7());
-                case 9:
-                    App.getPlayer().setEnemy(App.getEnemy9());
-
-            }
-
+            System.out.println("there is a monster near you");
+            btnWeapon.setDisable(false);
+            App.getPlayer().setEnemy(App.getEnemy1());
         }
 
+        
+        
+        
+        
+        
         if ((int) testPerson.getY() >= 400 && activeScene == 1) {
             setPosY(20);
             setPosX(testPerson.getX());

@@ -44,11 +44,13 @@ public class Enemy {
     public void getDamage(int dmg) throws IOException {
         currHp = currHp - dmg;
         boolean tot = obGestorben();
+        /*
         if (tot = true) {
             dead();
         } else {
             enemyTurn();
         }
+*/
     }
 
     public boolean obGestorben() {
