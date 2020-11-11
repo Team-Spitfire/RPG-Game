@@ -6,7 +6,6 @@
 package com.mycompany.eainf_rpg;
 
 import java.io.IOException;
-
 /**
  *
  * @author benbartel
@@ -27,14 +26,7 @@ public class Enemy {
         this.armor = armor;
     }
 
-    public void enemyTurn() throws IOException {
-
-        if (currHp < 10) {
-            usePotion();
-        } else {
-
-        }
-    }
+    
 
     public void weaponHit() throws IOException {
         int dmg = weapon.getAtk();
@@ -70,7 +62,7 @@ public class Enemy {
         App.getPlayer().enemyDied();
     }
 
-    private void usePotion() {
+    public void usePotion() {
 
     }
 
@@ -92,7 +84,16 @@ public class Enemy {
                 break;
         }
     }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public String getName() {
         return name;
     }

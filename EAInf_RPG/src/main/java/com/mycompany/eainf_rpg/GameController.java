@@ -103,14 +103,15 @@ public class GameController implements Initializable {
 
         playerWeaponAdvance();
         btnWeapon.setDisable(true);
+        btnPotion.setDisable(true);
     }
-
+    
     @FXML
     public void test4(ActionEvent event) throws IOException {
         App.getPlayer().getDamage(10);
         updateHpBar();
     }
-
+    
     public void updateHpBar() {
         double barValue = App.getPlayer().getCurrHp();
         double barValueSmall = barValue / 100;
@@ -118,7 +119,110 @@ public class GameController implements Initializable {
         hpBar.setProgress(barValueSmall);
 
     }
-
+    
+    
+    public void enemyTurn() throws IOException{
+        btnWeapon.setDisable(true);
+        btnPotion.setDisable(true);
+        
+        
+        if(ifInEnemyRange()){
+            if(App.getPlayer().getEnemy().getCurrHp() <= 10){
+                App.getPlayer().getEnemy().usePotion();
+                playerTurn();
+            }
+            else{
+                App.getPlayer().getEnemy().weaponHit();
+                updateHpBar();
+                playerTurn();
+            }
+        }
+        else{
+            if(testPerson.getX() < enemyImg.getX()){
+                //1
+                if(testPerson.getY() < enemyImg.getY()){
+                    System.out.println("1");
+                    moveEnemyUp();
+                    moveEnemyLeft();
+                }
+                //4
+                else if(testPerson.getY() > enemyImg.getY()){
+                    System.out.println("4");
+                    moveEnemyDown();
+                    moveEnemyLeft();
+                }
+            
+            }
+            else if(testPerson.getX() > enemyImg.getX()){
+                //2
+                if(testPerson.getY() < enemyImg.getY()){
+                    System.out.println("2");
+                    moveEnemyUp();
+                    moveEnemyRight();
+                }
+                //3
+                else if(testPerson.getY() > enemyImg.getY()){
+                    System.out.println("3");
+                    moveEnemyRight();
+                    moveEnemyDown();
+                }
+            }
+        }
+    }
+    
+    public void playerTurn(){
+        btnWeapon.setDisable(false);
+        btnPotion.setDisable(false);
+    }
+    
+    
+    
+    public void moveEnemyUp(){
+        enemyImg.setY(enemyImg.getY() - 16);
+        enemyImg.setY(enemyImg.getY() - 16);
+        enemyImg.setY(enemyImg.getY() - 16);
+        enemyImg.setY(enemyImg.getY() - 16);
+        enemyImg.setY(enemyImg.getY() - 16);
+        
+        
+    }
+    public void moveEnemyRight(){
+        enemyImg.setX(enemyImg.getX() + 16);
+        enemyImg.setX(enemyImg.getX() + 16);
+        enemyImg.setX(enemyImg.getX() + 16);
+        enemyImg.setX(enemyImg.getX() + 16);
+        enemyImg.setX(enemyImg.getX() + 16);
+    }
+    public void moveEnemyLeft(){
+        enemyImg.setX(enemyImg.getX() - 16);
+        enemyImg.setX(enemyImg.getX() - 16);
+        enemyImg.setX(enemyImg.getX() - 16);
+        enemyImg.setX(enemyImg.getX() - 16);
+        enemyImg.setX(enemyImg.getX() - 16);
+        
+    }
+    public void moveEnemyDown(){
+        enemyImg.setY(enemyImg.getY() + 16);
+        enemyImg.setY(enemyImg.getY() + 16);
+        enemyImg.setY(enemyImg.getY() + 16);
+        enemyImg.setY(enemyImg.getY() + 16);
+        enemyImg.setY(enemyImg.getY() + 16);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public boolean ifInEnemyRange() {
 
         boolean inRange = false;
@@ -154,12 +258,14 @@ public class GameController implements Initializable {
     private void btnWeapon(ActionEvent event) throws IOException {
         System.out.println("weapon");
         App.getPlayer().weaponHit();
+        enemyTurn();
     }
 
     @FXML
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
         App.getPlayer().usePotion();
+        enemyTurn();
     }
 
     @FXML
@@ -187,6 +293,8 @@ public class GameController implements Initializable {
         }
     }
 
+    
+    
     public void setPersonCoord() {
         testPerson.setX(140);
         testPerson.setY(198);
@@ -211,7 +319,9 @@ public class GameController implements Initializable {
         if (enemyNear) {
             System.out.println("there is a monster near you");
             btnWeapon.setDisable(false);
+            btnPotion.setDisable(false);
             App.getPlayer().setEnemy(App.getEnemy1());
+            playerTurn();
         }
 
         
@@ -432,6 +542,22 @@ public class GameController implements Initializable {
 
         } else {
         }
+    }
+
+    public Button getBtnWeapon() {
+        return btnWeapon;
+    }
+
+    public void setBtnWeapon(Button btnWeapon) {
+        this.btnWeapon = btnWeapon;
+    }
+
+    public Button getBtnPotion() {
+        return btnPotion;
+    }
+
+    public void setBtnPotion(Button btnPotion) {
+        this.btnPotion = btnPotion;
     }
 
     
