@@ -42,22 +42,22 @@ public class Store_ActiveController implements Initializable {
 
     @FXML
     private void buyWeaponLvl2(ActionEvent event) {
-        GameController.upgradeWeapon();
+        //GameController.upgradeWeapon();
     }
 
     @FXML
     private void buyWeaponLvl1(ActionEvent event) {
-        GameController.upgradeWeapon();
+        //GameController.upgradeWeapon();
     }
 
     @FXML
     private void buyArmorLvl2(ActionEvent event) {
-        GameController.upgradeArmor();
+        //GameController.upgradeArmor();
     }
 
     @FXML
     private void buyArmorLvl1(ActionEvent event) {
-        GameController.upgradeArmor();
+        //GameController.upgradeArmor();
     }
 
     @FXML

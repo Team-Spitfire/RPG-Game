@@ -106,6 +106,16 @@
                      </image></ImageView>
                </children>
             </Pane>
+            <Pane prefHeight="100.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Button.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="turnIndicator" layoutX="25.0" prefHeight="100.0" prefWidth="125.0" textFill="WHITE" />
+               </children>
+            </Pane>
          </children></Pane>
    </children>
 </AnchorPane>

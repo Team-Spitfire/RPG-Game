@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.eainf_rpg.GameController">
    <children>
@@ -90,6 +91,19 @@
                   <Label fx:id="maxHpLabel" layoutX="51.0" layoutY="58.0" text="maxHP" />
                   <Label fx:id="currHpLabel" contentDisplay="RIGHT" layoutX="6.0" layoutY="58.0" prefHeight="17.0" prefWidth="45.0" text="CurrHP" />
                   <ProgressBar fx:id="hpBar" layoutX="102.0" layoutY="57.0" prefWidth="200.0" progress="1.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Button.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="turnIndicator" layoutX="25.0" prefHeight="100.0" prefWidth="125.0" text="Ben ist Dumm" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
                </children>
             </Pane>
             <Button layoutX="533.0" layoutY="80.0" mnemonicParsing="false" onAction="#test4" text="Dmg" />
