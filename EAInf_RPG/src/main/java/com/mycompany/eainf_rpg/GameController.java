@@ -197,7 +197,15 @@ public class GameController implements Initializable {
         testPerson.setY(150);
     }
 
+    public void checkBounds(){
+        
+    }
+    
     public void checkPersonCoord() throws IOException {
+        
+        System.out.println(testPerson.getX());
+        System.out.println(testPerson.getY());
+        
         boolean enemyNear = false;
         switch(activeScene){
             case 1: enemyNear = ifInEnemyRange(); break;
