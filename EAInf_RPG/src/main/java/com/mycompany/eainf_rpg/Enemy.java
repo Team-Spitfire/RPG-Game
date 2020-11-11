@@ -12,6 +12,7 @@ import java.io.IOException;
  * @author benbartel
  */
 public class Enemy {
+
     public String name;
     public int maxHp;
     public int currHp;
@@ -25,63 +26,46 @@ public class Enemy {
         this.weapon = weapon;
         this.armor = armor;
     }
-    
-    
-    public void enemyTurn() throws IOException{
-        
-        
-        
-        
-        
-        
-        if(currHp < 10){
+
+    public void enemyTurn() throws IOException {
+
+        if (currHp < 10) {
             usePotion();
-        }
-        else{
-            
-            
-            
-            
+        } else {
+
         }
     }
-    
-    
+
     public void weaponHit() throws IOException {
         int dmg = weapon.getAtk();
         App.getPlayer().getDamage(dmg);
     }
-    
-    public void getDamage(int dmg) throws IOException{
-       currHp = currHp - dmg;
-       boolean tot = obGestorben();
-       if(tot = true){
+
+    public void getDamage(int dmg) throws IOException {
+        currHp = currHp - dmg;
+        boolean tot = obGestorben();
+        if (tot = true) {
             dead();
-       }
-       else{
-           enemyTurn();
-       }
+        } else {
+            enemyTurn();
+        }
     }
-    
-    public boolean obGestorben(){
+
+    public boolean obGestorben() {
         boolean gestorben;
         gestorben = currHp <= 0;
-            return gestorben;
+        return gestorben;
     }
-    
-    public void dead(){
+
+    public void dead() {
         App.getPlayer().enemyDied();
     }
-    
-    
-    
-    
-    
-    
+
     private void usePotion() {
-        
+
     }
-    
-    private void genHp(){
+
+    private void genHp() {
         switch (App.getPlayer().getLevel()) {
             case 1:
                 maxHp = 50;
@@ -99,15 +83,7 @@ public class Enemy {
                 break;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public String getName() {
         return name;
     }
@@ -148,7 +124,4 @@ public class Enemy {
         this.armor = armor;
     }
 
-    
-    
-           
 }

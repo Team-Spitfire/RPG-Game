@@ -24,33 +24,23 @@ import javafx.scene.layout.Pane;
  *
  * @author benbartel
  */
-
 public class GameController implements Initializable {
 
-    /** 
+    /**
      * Initializes the controller class.
      */
-    
     @FXML
     Label currHpLabel = new Label("currHp");
     @FXML
     Label maxHpLabel = new Label("maxHp");
-    
+
     static int activeScene = 5;
     static double posX = 300;
     static double posY = 150;
-    
-    
-    
-    
-    
+
     @FXML
     public ImageView testPerson;
-    
-    
-    
-   
-    
+
     @FXML
     private Pane evrth;
     @FXML
@@ -96,138 +86,153 @@ public class GameController implements Initializable {
     private ImageView background1;
     @FXML
     private Pane enemy1;
-    
-    
+
     //initialize 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         //itemSlot1Lvl1 = itemSlot1Lvl1;
-        
         setPersonCoord();
         updateHpBar();
         testPerson.setX(getPosX());
         testPerson.setY(getPosY());
-        
+
         currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
         btnWeapon.toFront();
-        
+
         playerWeaponAdvance();
-        
-        
-        
+
     }
-    
+
     @FXML
     public void test4(ActionEvent event) throws IOException {
         App.getPlayer().getDamage(10);
         updateHpBar();
     }
-    
-    public void updateHpBar(){
+
+    public void updateHpBar() {
         double barValue = App.getPlayer().getCurrHp();
         double barValueSmall = barValue / 100;
         hpBar.setProgress(barValueSmall);
-        
+
     }
-    
-    
-    public boolean ifInEnemyRange(){
-        
+
+    public boolean ifInEnemyRange() {
+
         boolean inRange = false;
-        
+
         //Ob gegner links von spieler und in 40px entfernt ist.
-        if(enemyImg.getX() < testPerson.getX() && enemyImg.getX() > testPerson.getX() - 100){
+        if (enemyImg.getX() < testPerson.getX() && enemyImg.getX() > testPerson.getX() - 100) {
             //ob der gegner über der person in 40px entfernt ist
-            if(enemyImg.getY() < testPerson.getY() && enemyImg.getY() > testPerson.getY() - 100){
+            if (enemyImg.getY() < testPerson.getY() && enemyImg.getY() > testPerson.getY() - 100) {
+                inRange = true;
+            } else if (enemyImg.getY() > testPerson.getY() && enemyImg.getY() < testPerson.getY() + 100) {
                 inRange = true;
             }
-            else if(enemyImg.getY() > testPerson.getY() && enemyImg.getY() < testPerson.getY() + 100){
-                inRange = true;
-            }
-        }
-        //Ob gegner rechts von spieler und in 40px entfernt ist.
-        else if(enemyImg.getX() > testPerson.getX() && enemyImg.getX() < testPerson.getX() + 100){
+        } //Ob gegner rechts von spieler und in 40px entfernt ist.
+        else if (enemyImg.getX() > testPerson.getX() && enemyImg.getX() < testPerson.getX() + 100) {
             //ob der gegner über der person in 40px entfernt ist
-            if(enemyImg.getY() < testPerson.getY() && enemyImg.getY() > testPerson.getY() - 100){
+            if (enemyImg.getY() < testPerson.getY() && enemyImg.getY() > testPerson.getY() - 100) {
+                inRange = true;
+            } else if (enemyImg.getY() > testPerson.getY() && enemyImg.getY() < testPerson.getY() + 100) {
                 inRange = true;
             }
-            else if(enemyImg.getY() > testPerson.getY() && enemyImg.getY() < testPerson.getY() + 100){
-                inRange = true;
-            }
+        } else {
+            inRange = false;
         }
-        else{inRange = false;}
         return inRange;
     }
-    
-    
-    
-    
+
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
         App.setRoot("Options");
     }
+
     @FXML
     private void btnWeapon(ActionEvent event) throws IOException {
         System.out.println("weapon");
         App.getPlayer().weaponHit();
     }
+
     @FXML
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
     }
-    
-    
+
     @FXML
     void keyPressed(KeyEvent event) throws IOException {
         switch (event.getCode()) {
-                case W: testPerson.setY(testPerson.getY() - 16); checkPersonCoord(); break;
-                case S: testPerson.setY(testPerson.getY() + 16); checkPersonCoord(); break;
-                case A: testPerson.setX(testPerson.getX() - 16); checkPersonCoord(); break;
-                case D: testPerson.setX(testPerson.getX() + 16); checkPersonCoord(); break;
-                
-        default:
-            break;
-            }
+            case W:
+                testPerson.setY(testPerson.getY() - 16);
+                checkPersonCoord();
+                break;
+            case S:
+                testPerson.setY(testPerson.getY() + 16);
+                checkPersonCoord();
+                break;
+            case A:
+                testPerson.setX(testPerson.getX() - 16);
+                checkPersonCoord();
+                break;
+            case D:
+                testPerson.setX(testPerson.getX() + 16);
+                checkPersonCoord();
+                break;
+
+            default:
+                break;
         }
-    
+    }
+
     public void setPersonCoord() {
         testPerson.setX(300);
         testPerson.setY(150);
     }
 
-    public void checkBounds(){
-        
+    public void checkBounds() {
+
     }
-    
+
     public void checkPersonCoord() throws IOException {
-        
+
         System.out.println(testPerson.getX());
         System.out.println(testPerson.getY());
-        
+
         boolean enemyNear = false;
-        switch(activeScene){
-            case 1: enemyNear = ifInEnemyRange(); break;
-            case 3: enemyNear = ifInEnemyRange(); break;
-            case 7: enemyNear = ifInEnemyRange(); break;
-            case 9: enemyNear = ifInEnemyRange(); break;
-            
-            default: 
+        switch (activeScene) {
+            case 1:
+                enemyNear = ifInEnemyRange();
+                break;
+            case 3:
+                enemyNear = ifInEnemyRange();
+                break;
+            case 7:
+                enemyNear = ifInEnemyRange();
+                break;
+            case 9:
+                enemyNear = ifInEnemyRange();
+                break;
+
+            default:
                 break;
         }
-        if(enemyNear){
+        if (enemyNear) {
             System.out.println("true");
-            switch(activeScene){
-                case 1: App.getPlayer().setEnemy(App.getEnemy1());
-                case 3: App.getPlayer().setEnemy(App.getEnemy3());
-                case 7: App.getPlayer().setEnemy(App.getEnemy7());
-                case 9: App.getPlayer().setEnemy(App.getEnemy9());
-                
+            switch (activeScene) {
+                case 1:
+                    App.getPlayer().setEnemy(App.getEnemy1());
+                case 3:
+                    App.getPlayer().setEnemy(App.getEnemy3());
+                case 7:
+                    App.getPlayer().setEnemy(App.getEnemy7());
+                case 9:
+                    App.getPlayer().setEnemy(App.getEnemy9());
+
             }
-        
+
         }
-        
+
         if ((int) testPerson.getY() >= 400 && activeScene == 1) {
             setPosY(20);
             setPosX(testPerson.getX());
@@ -466,180 +471,172 @@ public class GameController implements Initializable {
     public static void setPosY(double posY) {
         GameController.posY = posY;
     }
-    
-    
-    
+
     public double getHpProgressBar() {
         return hpBar.getProgress();
     }
-    
-    public void enemyFound(){
-        
+
+    public void enemyFound() {
+
     }
-    
-    
-    
-    
+
     //the btns for upgrading weapons/armor and potions
     //not final
     @FXML
     public void test1(ActionEvent event) throws IOException {
         upgradeWeapon();
     }
+
     @FXML
     public void test2(ActionEvent event) throws IOException {
         upgradeArmor();
     }
+
     @FXML
     public void test3(ActionEvent event) throws IOException {
         upgradePotion();
     }
-    
-    
-    
-    
-    
+
     //brings specific item images to front and sets opacity to 1
     //ItemSlot 1 Images To Front
-    public void toFront11(){
+    public void toFront11() {
         iSlot1Lvl1.setOpacity(1);
         iSlot1Lvl1.toFront();
     }
-    public void toFront12(){
+
+    public void toFront12() {
         iSlot1Lvl2.setOpacity(1);
         iSlot1Lvl2.toFront();
     }
-    public void toFront13(){
+
+    public void toFront13() {
         iSlot1Lvl3.setOpacity(1);
         iSlot1Lvl3.toFront();
     }
+
     //ItemSlot 2 Images To Front
-    public void toFront21(){
+    public void toFront21() {
         iSlot2Lvl1.setOpacity(1);
         iSlot2Lvl1.toFront();
     }
-    public void toFront22(){
+
+    public void toFront22() {
         iSlot2Lvl2.setOpacity(1);
         iSlot2Lvl2.toFront();
     }
-    public void toFront23(){
+
+    public void toFront23() {
         iSlot2Lvl3.setOpacity(1);
         iSlot2Lvl3.toFront();
     }
+
     //ItemSlot 3 Images To Front
-    public void toFront31(){
+    public void toFront31() {
         iSlot3Lvl1.setOpacity(1);
         iSlot3Lvl1.toFront();
     }
-    public void toFront32(){
+
+    public void toFront32() {
         iSlot3Lvl2.setOpacity(1);
         iSlot3Lvl2.toFront();
     }
-    public void toFront33(){
+
+    public void toFront33() {
         iSlot3Lvl3.setOpacity(1);
         iSlot3Lvl3.toFront();
     }
-    
-    
-    
-    
-    
+
     //sets all opacities to 0, used if there is no item existing.
-    public void allWeaponsOpto0(){
-            iSlot1Lvl1.setOpacity(0.0);
-            iSlot1Lvl2.setOpacity(0.0);
-            iSlot1Lvl3.setOpacity(0.0);
+    public void allWeaponsOpto0() {
+        iSlot1Lvl1.setOpacity(0.0);
+        iSlot1Lvl2.setOpacity(0.0);
+        iSlot1Lvl3.setOpacity(0.0);
     }
-    
-    public void allArmorOpto0(){
-            iSlot2Lvl1.setOpacity(0.0);
-            iSlot2Lvl2.setOpacity(0.0);
-            iSlot2Lvl3.setOpacity(0.0);
+
+    public void allArmorOpto0() {
+        iSlot2Lvl1.setOpacity(0.0);
+        iSlot2Lvl2.setOpacity(0.0);
+        iSlot2Lvl3.setOpacity(0.0);
     }
-    
-    public void allPotionOpto0(){
-            iSlot3Lvl1.setOpacity(0.0);
-            iSlot3Lvl2.setOpacity(0.0);
-            iSlot3Lvl3.setOpacity(0.0);
+
+    public void allPotionOpto0() {
+        iSlot3Lvl1.setOpacity(0.0);
+        iSlot3Lvl2.setOpacity(0.0);
+        iSlot3Lvl3.setOpacity(0.0);
     }
-    
-    
-    
+
     //Weapon UPGRADE
-    public void playerWeaponAdvance(){
+    public void playerWeaponAdvance() {
         //checks if the player has a weapon
-        if(App.getPlayer().getWeapon() == null){
+        if (App.getPlayer().getWeapon() == null) {
             //if no, all weapon images become invisible
             allWeaponsOpto0();
-        }
-        else{
+        } else {
             //if yes, it checks the current weapon lvl and brings the right one to the front
             switch (App.getPlayer().getWeapon().getRare()) {
                 case 1:
-                   toFront11();
+                    toFront11();
                     break;
                 case 2:
-                   toFront12(); 
+                    toFront12();
                     break;
                 case 3:
-                   toFront13();
+                    toFront13();
                     break;
                 default:
                     break;
             }
         }
     }
-    
+
     //Armor UPGRADE
-    public void playerArmorAdvance(){
+    public void playerArmorAdvance() {
         //same as one method above
-        if(App.getPlayer().getArmor() == null){
-             allArmorOpto0();
-        }
-        else{
-            
+        if (App.getPlayer().getArmor() == null) {
+            allArmorOpto0();
+        } else {
+
             switch (App.getPlayer().getArmor().getRare()) {
                 case 1:
-                   toFront21();
+                    toFront21();
                     break;
                 case 2:
-                   toFront22(); 
+                    toFront22();
                     break;
                 case 3:
-                   toFront23();
+                    toFront23();
                     break;
                 default:
                     break;
             }
         }
     }
-    
+
     //Potion UPGRADE
-    public void playerPotionAdvance(){
+    public void playerPotionAdvance() {
         //same as one method above
-        if(App.getPlayer().getPotion() == null){
-             allPotionOpto0();
-        }
-        else{
-            
+        if (App.getPlayer().getPotion() == null) {
+            allPotionOpto0();
+        } else {
+
             switch (App.getPlayer().getArmor().getRare()) {
                 case 1:
-                   toFront31();
+                    toFront31();
                     break;
                 case 2:
-                   toFront32(); 
+                    toFront32();
                     break;
                 case 3:
-                   toFront33();
+                    toFront33();
                     break;
                 default:
                     break;
             }
         }
     }
-    
+
     //initates upgrade from gear
-    public void upgradeWeapon(){
+    public void upgradeWeapon() {
         //gets current lvl and adds one
         int newWeaponLvl = App.getPlayer().getWeapon().getRare() + 1;
         //sets new lvl, one added
@@ -647,18 +644,19 @@ public class GameController implements Initializable {
         //this method checks lvl and brings the correct one to front
         playerWeaponAdvance();
     }
+
     //same as one method above, but for Armor
-    public void upgradeArmor(){
+    public void upgradeArmor() {
         int newArmorLvl = App.getPlayer().getArmor().getRare() + 1;
         App.getPlayer().getArmor().setRare(newArmorLvl);
         playerArmorAdvance();
     }
+
     //same method above, but for Potion.
-    public void upgradePotion(){
+    public void upgradePotion() {
         int newPotionLvl = App.getPlayer().getPotion().getRare() + 1;
         App.getPlayer().getPotion().setRare(newPotionLvl);
         playerPotionAdvance();
     }
-    
-    
+
 }
