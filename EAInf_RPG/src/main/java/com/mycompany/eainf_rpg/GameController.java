@@ -97,7 +97,7 @@ public class GameController implements Initializable {
         testPerson.setX(getPosX());
         testPerson.setY(getPosY());
 
-        currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
+        
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
         btnWeapon.toFront();
 
@@ -114,6 +114,7 @@ public class GameController implements Initializable {
     public void updateHpBar() {
         double barValue = App.getPlayer().getCurrHp();
         double barValueSmall = barValue / 100;
+        currHpLabel.setText(Integer.toString(App.getPlayer().getCurrHp()));
         hpBar.setProgress(barValueSmall);
 
     }
