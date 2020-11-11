@@ -70,6 +70,12 @@ public class StoreController implements Initializable{
     }
 
     @FXML
-    private void btnShop(ActionEvent event) {
+    private void btnShop(ActionEvent event) throws IOException {
+        if((int) testPerson.getX() >= 189 && testPerson.getX() <= 365 && (int) testPerson.getY() >= 116 && (int) testPerson.getY() <= 132){
+            App.setRoot("Store_Active");
+        
+        }
+        
     }
+    
 }
