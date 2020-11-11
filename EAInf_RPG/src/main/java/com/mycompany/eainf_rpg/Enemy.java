@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import static com.mycompany.eainf_rpg.Player.currHp;
 import java.io.IOException;
 
 /**
@@ -42,20 +43,26 @@ public class Enemy {
     }
 
     public void getDamage(int dmg) throws IOException {
+        System.out.println(currHp);
+        
         currHp = currHp - dmg;
+        System.out.println(currHp);
         boolean tot = obGestorben();
-        /*
-        if (tot = true) {
+        if (tot == true) {
             dead();
         } else {
-            enemyTurn();
+            
         }
-*/
+        
     }
 
     public boolean obGestorben() {
         boolean gestorben;
-        gestorben = currHp <= 0;
+        if (currHp <= 0) {
+            gestorben = true;
+        } else {
+            gestorben = false;
+        }
         return gestorben;
     }
 
