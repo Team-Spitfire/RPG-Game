@@ -265,6 +265,7 @@ public class GameController implements Initializable {
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
         App.getPlayer().usePotion();
+        updateHpBar();
         enemyTurn();
     }
 
