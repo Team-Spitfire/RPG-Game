@@ -38,13 +38,8 @@ public class Enemy {
         
         currHp = currHp - dmg;
         System.out.println(currHp);
-        boolean tot = obGestorben();
-        if (tot == true) {
-            System.out.println("dead");
-            dead();
-        } else {
-            
-        }
+        
+        
         
     }
 
