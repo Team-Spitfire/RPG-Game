@@ -474,7 +474,7 @@ public class GameController implements Initializable {
         } else if ((int) testPerson.getX() <= 0 && activeScene == 6) {
             setPosX(580);
             setPosY(testPerson.getY());
-            App.setRoot("Game_4");
+            App.setRoot("Game");
             setActiveScene(5);
             System.out.println("links");
             System.out.println("scene 5");
