@@ -327,7 +327,9 @@ public class GameController implements Initializable {
         
         
         
-        
+        if ((int) testPerson.getY() >= 198 &&(int) testPerson.getY() <= 214 &&(int) testPerson.getX() >= 76 &&(int) testPerson.getX() <= 140 && activeScene == 5){
+            App.setRoot("Store");
+        }
         
         if ((int) testPerson.getY() >= 400 && activeScene == 1) {
             setPosY(20);
