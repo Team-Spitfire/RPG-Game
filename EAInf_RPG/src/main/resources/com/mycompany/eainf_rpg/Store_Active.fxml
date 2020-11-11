@@ -80,6 +80,7 @@
                   <Button fx:id="shopPotionLvl1" mnemonicParsing="false" onAction="#buyPotionLvl1" prefHeight="50.0" prefWidth="100.0" text="11 Coins" />
                </children>
             </Pane>
+            <Button layoutX="497.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackToStore" text="Back To Store" />
          </children>
       </Pane>
    </children>

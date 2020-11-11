@@ -5,6 +5,7 @@
  */
 package com.mycompany.eainf_rpg;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -66,6 +67,12 @@ public class Store_ActiveController implements Initializable {
 
     @FXML
     private void buyPotionLvl1(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnBackToStore(ActionEvent event) throws IOException {
+        App.setRoot("Store");
+        
     }
     
 }
