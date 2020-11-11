@@ -329,6 +329,14 @@ public class GameController implements Initializable {
         if(activeScene == 5){
             System.out.println("no monster");
         }
+        else if(activeScene == 9 && testPerson.getY() > 308 && testPerson.getY() < 340 && testPerson.getX() < 340 && testPerson.getX() > 180){
+            System.out.println("there is a monster near you");
+            btnWeapon.setDisable(false);
+            btnPotion.setDisable(false);
+            App.getPlayer().setEnemy(App.getEnemy9());
+            enemyImg.setX(testPerson.getX() + 40);
+            enemyImg.setY(testPerson.getY());
+        }
         else{enemyNear = ifInEnemyRange();}
         
         if (enemyNear) {
@@ -344,7 +352,7 @@ public class GameController implements Initializable {
                 case 6: App.getPlayer().setEnemy(App.getEnemy6()); break;
                 case 7: App.getPlayer().setEnemy(App.getEnemy7()); break;
                 case 8: App.getPlayer().setEnemy(App.getEnemy8()); break;
-                case 9: App.getPlayer().setEnemy(App.getEnemy9()); break;
+                
             }
             
             
