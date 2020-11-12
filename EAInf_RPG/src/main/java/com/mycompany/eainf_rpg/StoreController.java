@@ -76,6 +76,7 @@ public class StoreController implements Initializable{
     public void setPersonCoord() {
         testPerson.setX(getPosX());
         testPerson.setY(getPosY());
+        checkBtnAccess();
     }
     
     public void checkCoords() throws IOException{
