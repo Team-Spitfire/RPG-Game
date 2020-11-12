@@ -33,7 +33,7 @@ public class StoreController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         testPerson.setX(269);
-        testPerson.setY(356);
+        testPerson.setY(340);
         
     }
    
