@@ -5,8 +5,6 @@
  */
 package com.mycompany.eainf_rpg;
 
-import static com.mycompany.eainf_rpg.GameController.getPosX;
-import static com.mycompany.eainf_rpg.GameController.getPosY;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,33 +43,26 @@ public class StoreController implements Initializable{
             case W:
                 btnToShop.setDisable(true);
                 testPerson.setY(testPerson.getY() - 16);
-                testPerson.getY();
-                testPerson.getX();
-                System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkCoords();
+                
                 checkBtnAccess();
                 break;
             case S:
                 btnToShop.setDisable(true);
                 testPerson.setY(testPerson.getY() + 16);  
-                testPerson.getY();
-                testPerson.getX();
-                System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkCoords();
                 checkBtnAccess();
                 break;
             case A:
                 btnToShop.setDisable(true);
                 testPerson.setX(testPerson.getX() - 16);  
-                testPerson.getY();
-                testPerson.getX();
-                System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkCoords();
                 checkBtnAccess();
                 break;
             case D:
                 btnToShop.setDisable(true);
                 testPerson.setX(testPerson.getX() + 16);  
-                testPerson.getY();
-                testPerson.getX();
-                System.out.println(testPerson.getX() + " + " + testPerson.getY());
+                checkCoords();
                 checkBtnAccess();
                 break;
 
@@ -79,6 +70,19 @@ public class StoreController implements Initializable{
                 break;
         }
     }
+    
+    public void checkCoords() throws IOException{
+        testPerson.getY();
+        testPerson.getX();
+        System.out.println(testPerson.getX() + " + " + testPerson.getY());
+        checkBtnAccess();
+        if(testPerson.getY() > 340 && testPerson.getY() < 372 && testPerson.getX() > 237 && testPerson.getX() < 317){
+            App.setRoot("Game");
+        }
+    }
+    
+    
+    
     
     void checkBtnAccess() throws IOException{
         if((int) testPerson.getX() >= 189 && testPerson.getX() <= 365 && (int) testPerson.getY() >= 116 && (int) testPerson.getY() <= 132){
