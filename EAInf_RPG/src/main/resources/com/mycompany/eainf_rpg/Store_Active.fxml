@@ -29,7 +29,7 @@
                         <Image url="@Sword3.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="weapomLvl2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="weaponLvl2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Sword2.png" />
                      </image>

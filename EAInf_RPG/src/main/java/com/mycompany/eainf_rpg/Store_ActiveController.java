@@ -39,7 +39,7 @@ public class Store_ActiveController implements Initializable {
     @FXML
     private ImageView weaponLvl3;
     @FXML
-    private ImageView weapomLvl2;
+    private ImageView weaponLvl2;
     @FXML
     private ImageView armorLvl3;
     @FXML
@@ -56,6 +56,61 @@ public class Store_ActiveController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        switch (App.getPlayer().getWeapon().getRare()) {
+                case 1:
+                    weaponLvl2.toFront();
+                    shopWeaponLvl1.toFront();
+                    break;
+                case 2:
+                    weaponLvl3.toFront();
+                    shopWeaponLvl2.toFront();
+                    break;
+                case 3:
+                    weaponLvl3.toFront();
+                    shopWeaponLvl2.toFront();
+                    shopWeaponLvl2.setDisable(true);
+                    break;
+                default:
+                    break;
+            }
+        
+        switch (App.getPlayer().getArmor().getRare()) {
+                case 1:
+                    armorLvl2.toFront();
+                    shopArmorLvl1.toFront();
+                    break;
+                case 2:
+                    armorLvl3.toFront();
+                    shopArmorLvl2.toFront();
+                    break;
+                case 3:
+                    armorLvl3.toFront();
+                    shopArmorLvl2.toFront();
+                    shopArmorLvl2.setDisable(true);
+                    break;
+                default:
+                    break;
+            }
+        
+        
+        switch (App.getPlayer().getPotion().getRare()) {
+                case 1:
+                    potionLvl2.toFront();
+                    shopPotionLvl1.toFront();
+                    break;
+                case 2:
+                    potionLvl3.toFront();
+                    shopPotionLvl2.toFront();
+                    break;
+                case 3:
+                    potionLvl3.toFront();
+                    shopPotionLvl2.toFront();
+                    shopPotionLvl2.setDisable(true);
+                    break;
+                default:
+                    break;
+            }
     }    
 
     @FXML
