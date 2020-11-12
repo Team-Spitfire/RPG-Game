@@ -120,6 +120,7 @@
                </image>
             </ImageView>
             <Label fx:id="coinLabel" layoutX="474.0" layoutY="33.0" prefHeight="27.0" prefWidth="50.0" style="-fx-border-radius: 15;" />
+            <Button fx:id="btnChest2" layoutX="302.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnOpenChest2" opacity="0.0" prefHeight="39.0" prefWidth="45.0" text="Button" />
          </children></Pane>
    </children>
 </AnchorPane>

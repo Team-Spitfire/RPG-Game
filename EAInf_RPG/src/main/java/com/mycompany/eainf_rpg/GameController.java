@@ -93,7 +93,9 @@ public class GameController implements Initializable {
     @FXML
     private Pane enemy1;
     @FXML
-    private Button btnChest;
+    private Button btnChest1;
+    @FXML
+    private Button btnChest2;
 
     //initialize 
     @Override
@@ -777,10 +779,36 @@ public class GameController implements Initializable {
         
     }
     @FXML
-    private void btnOpenChest(ActionEvent event) {
-        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
-        btnChest.setDisable(true);
-        updateCoinsLabel();
+    private void btnOpenChest1(ActionEvent event) {
+        if((int) testPerson.getX() >= 412 &&(int) testPerson.getX() <= 476 &&(int) testPerson.getY() >= 268 &&(int) testPerson.getY() <= 316 && getActiveScene() == 2);
+            App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
+            btnChest1.setDisable(true);
+            updateCoinsLabel();
+            setChestUsed1(true);
+    }
+    @FXML
+    private void btnOpenChest2(ActionEvent event) {
+        if((int) testPerson.getX() >= 276 &&(int) testPerson.getX() <= 324 &&(int) testPerson.getY() >= 166 &&(int) testPerson.getY() <= 214 && getActiveScene() == 4);
+            App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
+            btnChest2.setDisable(true);
+            updateCoinsLabel();
+            setChestUsed2(true);
+    }
+
+    public boolean getChestUsed1() {
+        return chestUsed1;
+    }
+
+    public void setChestUsed1(boolean chestUsed1) {
+        this.chestUsed1 = chestUsed1;
+    }
+
+    public boolean getChestUsed2() {
+        return chestUsed2;
+    }
+
+    public void setChestUsed2(boolean chestUsed2) {
+        this.chestUsed2 = chestUsed2;
     }
 
 }
