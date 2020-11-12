@@ -37,6 +37,9 @@ public class GameController implements Initializable {
     static double posX = 300;
     static double posY = 150;
 
+    boolean chestUsed1 = false;
+    boolean chestUsed2 = false;
+    
     @FXML
     public ImageView testPerson;
 
