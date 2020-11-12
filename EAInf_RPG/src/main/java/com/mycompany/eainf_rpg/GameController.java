@@ -84,11 +84,13 @@ public class GameController implements Initializable {
     @FXML
     private Label turnIndicator;
     @FXML
-    private ImageView background7;
-    @FXML
-    private Pane enemy7;
-    @FXML
     private Label coinLabel;
+    @FXML
+    private ImageView background2;
+    @FXML
+    private Pane enemy1;
+    @FXML
+    private Button btnChest;
 
     //initialize 
     @Override
@@ -110,11 +112,9 @@ public class GameController implements Initializable {
         updateCoinsLabel();
         updateItemImages();
     }
-    @FXML
     public void updateCoinsLabel(){
         coinLabel.setText(Integer.toString(App.getPlayer().getGoldCoins()));
     }
-    @FXML
     public void updateItemImages(){
         switch (App.getPlayer().getWeapon().getRare()) {
                 case 1:
@@ -173,6 +173,8 @@ public class GameController implements Initializable {
         hpBar.setProgress(barValueSmall);
 
     }
+    
+  
     
     
     public void enemyTurn() throws IOException{
@@ -764,6 +766,18 @@ public class GameController implements Initializable {
 
     
 
-    
+
+    //same method above, but for Potion.
+    public void upgradePotion() {
+        int newPotionLvl = App.getPlayer().getPotion().getRare() + 1;
+        App.getPlayer().getPotion().setRare(newPotionLvl);
+        
+    }
+    @FXML
+    private void btnOpenChest(ActionEvent event) {
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
+        btnChest.setDisable(true);
+        updateCoinsLabel();
+    }
 
 }
