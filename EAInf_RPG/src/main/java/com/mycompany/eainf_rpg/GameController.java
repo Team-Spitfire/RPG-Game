@@ -8,7 +8,6 @@ package com.mycompany.eainf_rpg;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -85,9 +84,11 @@ public class GameController implements Initializable {
     @FXML
     private Label turnIndicator;
     @FXML
-    private ImageView background1;
+    private ImageView background7;
     @FXML
-    private Pane enemy1;
+    private Pane enemy7;
+    @FXML
+    private Label coinLabel;
 
     //initialize 
     @Override
@@ -106,7 +107,14 @@ public class GameController implements Initializable {
         playerWeaponAdvance();
         btnWeapon.setDisable(true);
         btnPotion.setDisable(true);
+        updateCoinsLabel();
+        
     }
+    @FXML
+    public void updateCoinsLabel(){
+        coinLabel.setText(Integer.toString(App.getPlayer().getGoldCoins()));
+    }
+    
     
     @FXML
     public void test4(ActionEvent event) throws IOException {
@@ -269,6 +277,11 @@ public class GameController implements Initializable {
             enemyImg.setY(1000);
             enemyImg.setX(1000);
             App.getPlayer().setEnemy(null);
+            turnIndicator.setText("You defeated the Enemy.");
+            App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
+            updateCoinsLabel();
+            
+            
         }
         else{enemyTurn();}
         

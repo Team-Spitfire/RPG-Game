@@ -115,6 +115,9 @@
                   <Label fx:id="turnIndicator" layoutX="25.0" prefHeight="100.0" prefWidth="125.0" textFill="WHITE" />
                </children>
             </Pane>
-         </children></Pane>
+            <Label fx:id="coinLabel" layoutX="466.0" layoutY="14.0" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-radius: 15;" />
+         </children>
+      
+      </Pane>
    </children>
 </AnchorPane>

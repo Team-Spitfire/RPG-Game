@@ -109,6 +109,7 @@
             <Button layoutX="533.0" layoutY="80.0" mnemonicParsing="false" onAction="#test4" text="Dmg" />
             <Button fx:id="btnWeapon" layoutX="390.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnWeapon" prefHeight="27.0" prefWidth="56.0" text="Attack" />
             <Button fx:id="btnPotion" layoutX="528.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnPotion" prefHeight="27.0" prefWidth="56.0" text="Potion" />
+            <Label fx:id="coinLabel" layoutX="466.0" layoutY="14.0" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-radius: 15;" />
          </children></Pane>
    </children>
 </AnchorPane>
