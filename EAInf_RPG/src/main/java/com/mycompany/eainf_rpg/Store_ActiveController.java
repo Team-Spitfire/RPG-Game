@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -32,6 +33,9 @@ public class Store_ActiveController implements Initializable {
     private Button shopPotionLvl2;
     @FXML
     private Button shopPotionLvl1;
+    @FXML
+    private Label goldCoinValue;
+        
 
     /**
      * Initializes the controller class.
@@ -81,4 +85,8 @@ public class Store_ActiveController implements Initializable {
         
     }
     
+    @FXML
+    private void adjustCoinValue(){
+        goldCoinValue.setText(Integer.toString(App.getPlayer().getGoldCoins()));
+    }
 }
