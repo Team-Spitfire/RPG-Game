@@ -61,6 +61,7 @@ public class Store_ActiveController implements Initializable {
     @FXML
     private void buyWeaponLvl2(ActionEvent event) {
         //GameController.upgradeWeapon();
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 20);
         App.getPlayer().getWeapon().setRare(3);
         shopWeaponLvl2.setDisable(true);
     }
@@ -68,6 +69,7 @@ public class Store_ActiveController implements Initializable {
     @FXML
     private void buyWeaponLvl1(ActionEvent event) {
         //GameController.upgradeWeapon();
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 7);
         App.getPlayer().getWeapon().setRare(2);
         weaponLvl3.toFront();
         shopWeaponLvl2.toFront();
@@ -77,6 +79,7 @@ public class Store_ActiveController implements Initializable {
     @FXML
     private void buyArmorLvl2(ActionEvent event) {
         //GameController.upgradeArmor();
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 20);
         App.getPlayer().getArmor().setRare(3);
         shopArmorLvl2.setDisable(true);
     }
@@ -84,6 +87,7 @@ public class Store_ActiveController implements Initializable {
     @FXML
     private void buyArmorLvl1(ActionEvent event) {
         //GameController.upgradeArmor();
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 7);
         App.getPlayer().getArmor().setRare(2);
         armorLvl3.toFront();
         shopArmorLvl2.toFront();
@@ -91,12 +95,14 @@ public class Store_ActiveController implements Initializable {
 
     @FXML
     private void buyPotionLvl2(ActionEvent event) {
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 25);
         App.getPlayer().getPotion().setRare(3);
         shopPotionLvl2.setDisable(true);
     }
 
     @FXML
     private void buyPotionLvl1(ActionEvent event) {
+        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 11);
         App.getPlayer().getPotion().setRare(2);
         potionLvl3.toFront();
         shopPotionLvl2.toFront();
