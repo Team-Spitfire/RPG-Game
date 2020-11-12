@@ -29,12 +29,14 @@ public class StoreController implements Initializable{
     @FXML
     private Button btnToShop;
         
+    static double posX = 269;
+    static double posY = 340;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         testPerson.setX(269);
         testPerson.setY(340);
-        
+        setPersonCoord();
     }
    
     @FXML
@@ -71,6 +73,11 @@ public class StoreController implements Initializable{
         }
     }
     
+    public void setPersonCoord() {
+        testPerson.setX(getPosX());
+        testPerson.setY(getPosY());
+    }
+    
     public void checkCoords() throws IOException{
         testPerson.getY();
         testPerson.getX();
@@ -93,10 +100,28 @@ public class StoreController implements Initializable{
     @FXML
     private void btnShop(ActionEvent event) throws IOException {
         if((int) testPerson.getX() >= 189 && testPerson.getX() <= 365 && (int) testPerson.getY() >= 116 && (int) testPerson.getY() <= 132){
+            setPosX(269);
+            setPosY(132);
             App.setRoot("Store_Active");
-        
+            
         }
         
+    }
+    
+    public static double getPosX() {
+        return posX;
+    }
+
+    public static void setPosX(double posX) {
+        StoreController.posX = posX;
+    }
+
+    public static double getPosY() {
+        return posY;
+    }
+
+    public static void setPosY(double posY) {
+        StoreController.posY = posY;
     }
     
 }
