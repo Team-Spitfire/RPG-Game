@@ -106,7 +106,7 @@ public class GameController implements Initializable {
         maxHpLabel.setText(Integer.toString(App.getPlayer().getMaxHp()));
         btnWeapon.toFront();
 
-        playerWeaponAdvance();
+        //playerWeaponAdvance();
         btnWeapon.setDisable(true);
         btnPotion.setDisable(true);
         updateCoinsLabel();
@@ -306,9 +306,9 @@ public class GameController implements Initializable {
             enemyImg.setX(1000);
             App.getPlayer().setEnemy(null);
             turnIndicator.setText("You defeated the Enemy.");
-            App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 10);
+            App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() + 5);
             updateCoinsLabel();
-            
+            updateEnemyHp();
             
         }
         else{enemyTurn();}
@@ -316,6 +316,20 @@ public class GameController implements Initializable {
         
     }
 
+    
+    public void updateEnemyHp(){
+        App.getEnemy1().setCurrHp(App.getEnemy1().getMaxHp());
+        App.getEnemy2().setCurrHp(App.getEnemy2().getMaxHp());
+        App.getEnemy3().setCurrHp(App.getEnemy3().getMaxHp());
+        App.getEnemy4().setCurrHp(App.getEnemy4().getMaxHp());
+        App.getEnemy9().setCurrHp(App.getEnemy9().getMaxHp());
+        App.getEnemy6().setCurrHp(App.getEnemy6().getMaxHp());
+        App.getEnemy7().setCurrHp(App.getEnemy7().getMaxHp());
+        App.getEnemy8().setCurrHp(App.getEnemy8().getMaxHp());
+    
+    }
+    
+    
     @FXML
     private void btnPotion(ActionEvent event) throws IOException {
         System.out.println("potion");
@@ -681,23 +695,6 @@ public class GameController implements Initializable {
         return hpBar.getProgress();
     }
 
-    public void enemyFound() {
-
-    }
-
-    //the btns for upgrading weapons/armor and potions
-    //not final
-    public void test1(ActionEvent event) throws IOException {
-        upgradeWeapon();
-    }
-
-    public void test2(ActionEvent event) throws IOException {
-        upgradeArmor();
-    }
-
-    public void test3(ActionEvent event) throws IOException {
-        upgradePotion();
-    }
 
     //brings specific item images to front and sets opacity to 1
     //ItemSlot 1 Images To Front
@@ -767,98 +764,14 @@ public class GameController implements Initializable {
         iSlot3Lvl3.setOpacity(0.0);
     }
 
-    //Weapon UPGRADE
-    public void playerWeaponAdvance() {
-        //checks if the player has a weapon
-        if (App.getPlayer().getWeapon() == null) {
-            //if no, all weapon images become invisible
-            allWeaponsOpto0();
-        } else {
-            //if yes, it checks the current weapon lvl and brings the right one to the front
-            switch (App.getPlayer().getWeapon().getRare()) {
-                case 1:
-                    toFront11();
-                    break;
-                case 2:
-                    toFront12();
-                    break;
-                case 3:
-                    toFront13();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+    
 
-    //Armor UPGRADE
-    public void playerArmorAdvance() {
-        //same as one method above
-        if (App.getPlayer().getArmor() == null) {
-            allArmorOpto0();
-        } else {
-
-            switch (App.getPlayer().getArmor().getRare()) {
-                case 1:
-                    toFront21();
-                    break;
-                case 2:
-                    toFront22();
-                    break;
-                case 3:
-                    toFront23();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    //Potion UPGRADE
-    public void playerPotionAdvance() {
-        //same as one method above
-        if (App.getPlayer().getPotion() == null) {
-            allPotionOpto0();
-        } else {
-
-            switch (App.getPlayer().getArmor().getRare()) {
-                case 1:
-                    toFront31();
-                    break;
-                case 2:
-                    toFront32();
-                    break;
-                case 3:
-                    toFront33();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    //initates upgrade from gear
-    public void upgradeWeapon() {
-        //gets current lvl and adds one
-        int newWeaponLvl = App.getPlayer().getWeapon().getRare() + 1;
-        //sets new lvl, one added
-        App.getPlayer().getWeapon().setRare(newWeaponLvl);
-        //this method checks lvl and brings the correct one to front
-        playerWeaponAdvance();
-    }
-
-    //same as one method above, but for Armor
-    public void upgradeArmor() {
-        int newArmorLvl = App.getPlayer().getArmor().getRare() + 1;
-        App.getPlayer().getArmor().setRare(newArmorLvl);
-        playerArmorAdvance();
-    }
 
     //same method above, but for Potion.
     public void upgradePotion() {
         int newPotionLvl = App.getPlayer().getPotion().getRare() + 1;
         App.getPlayer().getPotion().setRare(newPotionLvl);
-        playerPotionAdvance();
+        
     }
     @FXML
     private void btnOpenChest(ActionEvent event) {
