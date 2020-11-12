@@ -34,8 +34,9 @@ public class HomescreenController implements Initializable {
 
     @FXML
     private void btnStart(ActionEvent event) throws IOException {
-        App.setRoot("Charakters");
-        
+        App.createPlayer();
+        App.createEnemies();
+        App.setRoot("Game");
     }
 
     @FXML
