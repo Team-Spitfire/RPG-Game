@@ -36,7 +36,11 @@ public class StoreController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         testPerson.setX(269);
         testPerson.setY(340);
-        setPersonCoord();
+        try {
+            setPersonCoord();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
    
     @FXML
@@ -73,7 +77,7 @@ public class StoreController implements Initializable{
         }
     }
     
-    public void setPersonCoord() {
+    public void setPersonCoord() throws IOException {
         testPerson.setX(getPosX());
         testPerson.setY(getPosY());
         checkBtnAccess();

@@ -64,6 +64,7 @@ public class Store_ActiveController implements Initializable {
         App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 20);
         App.getPlayer().getWeapon().setRare(3);
         shopWeaponLvl2.setDisable(true);
+        shopWeaponLvl1.setDisable(true);
     }
 
     @FXML
@@ -81,6 +82,8 @@ public class Store_ActiveController implements Initializable {
         //GameController.upgradeArmor();
         App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 20);
         App.getPlayer().getArmor().setRare(3);
+        
+        shopArmorLvl1.setDisable(true);
         shopArmorLvl2.setDisable(true);
     }
 
@@ -98,6 +101,7 @@ public class Store_ActiveController implements Initializable {
         App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 25);
         App.getPlayer().getPotion().setRare(3);
         shopPotionLvl2.setDisable(true);
+        shopPotionLvl1.setDisable(true);
     }
 
     @FXML
@@ -106,7 +110,7 @@ public class Store_ActiveController implements Initializable {
         App.getPlayer().getPotion().setRare(2);
         potionLvl3.toFront();
         shopPotionLvl2.toFront();
-        App.getPlayer().setGoldCoins(App.getPlayer().getGoldCoins() - 7);
+        
     }
 
     @FXML
