@@ -124,12 +124,15 @@ public class GameController implements Initializable {
         switch (App.getPlayer().getWeapon().getRare()) {
                 case 1:
                     toFront11();
+                    
                     break;
                 case 2:
                     toFront12();
+                    App.getPlayer().getWeapon().setAtk(23);
                     break;
                 case 3:
                     toFront13();
+                    App.getPlayer().getWeapon().setAtk(45);
                     break;
                 default:
                     break;
@@ -141,9 +144,11 @@ public class GameController implements Initializable {
                     break;
                 case 2:
                     toFront22();
+                    App.getPlayer().getArmor().setDef(30);
                     break;
                 case 3:
                     toFront23();
+                    App.getPlayer().getArmor().setDef(50);
                     break;
                 default:
                     break;
@@ -156,9 +161,11 @@ public class GameController implements Initializable {
                     break;
                 case 2:
                     toFront32();
+                    App.getPlayer().getPotion().setHealValue(20);
                     break;
                 case 3:
                     toFront33();
+                    App.getPlayer().getPotion().setHealValue(30);
                     break;
                 default:
                     break;
@@ -340,6 +347,7 @@ public class GameController implements Initializable {
         System.out.println("potion");
         App.getPlayer().usePotion();
         updateHpBar();
+        System.out.println("potion done");
         enemyTurn();
     }
 
