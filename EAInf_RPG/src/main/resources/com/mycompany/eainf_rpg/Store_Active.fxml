@@ -24,12 +24,12 @@
             </ImageView>
             <Pane layoutX="100.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="weaponLvl3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Sword3.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="weapomLvl2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Sword2.png" />
                      </image>
@@ -38,12 +38,12 @@
             </Pane>
             <Pane layoutX="250.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="armorLvl3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Armor3.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="armorLvl2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Armor2.png" />
                      </image>
@@ -52,12 +52,12 @@
             </Pane>
             <Pane layoutX="400.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="potionLvl3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Potion3.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="potionLvl2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Potion2.jpg" />
                      </image>
